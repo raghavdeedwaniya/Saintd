@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery — Saint "D" Public School</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.gallery-controls {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+  align-items: center;
+}
+.filter-btn {
+  background: var(--light);
+  color: var(--navy);
+  border: 2px solid transparent;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'Nunito', sans-serif;
+}
+.filter-btn:hover, .filter-btn.active {
+  background: var(--navy);
+  color: white;
+}
+
+/* Upload zone */
+.upload-zone {
+  border: 3px dashed var(--royal);
+  border-radius: 18px;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--light);
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 3rem;
+  position: relative;
+}
+.upload-zone:hover { border-color: var(--navy); background: #e4e9ff; }
+.upload-zone input[type="file"] {
+  position: absolute; inset: 0;
+  opacity: 0; cursor: pointer; z-index: 5;
+}
+.upload-zone .uz-icon { font-size: 3rem; margin-bottom: 1rem; }
+.upload-zone h3 { color: var(--navy); font-weight: 800; margin-bottom: 0.4rem; }
+.upload-zone p { color: var(--gray); font-size: 0.88rem; }
+
+/* Masonry-style gallery */
+.gallery-grid {
+  columns: 3;
+  column-gap: 1.2rem;
+  gap: 1.2rem;
+}
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 1.2rem;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.gallery-item:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
+.gallery-item img {
+  width: 100%; height: auto;
+  display: block;
+  object-fit: cover;
+}
+.gallery-item .gi-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(18,23,94,0.8) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+}
+.gallery-item:hover .gi-overlay { opacity: 1; }
+.gi-overlay span {
+  color: white;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+.gi-delete {
+  position: absolute;
+  top: 8px; right: 8px;
+  background: rgba(192,49,43,0.85);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+.gallery-item:hover .gi-delete { display: flex; }
+
+/* Category tags */
+.cat-tag {
+  position: absolute;
+  top: 8px; left: 8px;
+  background: rgba(18,23,94,0.75);
+  color: white;
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  backdrop-filter: blur(4px);
+}
+
+/* Lightbox */
+.lightbox {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.lightbox.open { display: flex; }
+.lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.lb-close {
+  position: absolute;
+  top: 1.5rem; right: 1.5rem;
+  background: rgba(255,255,255,0.15);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px; height: 44px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lb-close:hover { background: var(--red); }
+.lb-caption {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(18,23,94,0.8);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  backdrop-filter: blur(6px);
+  white-space: nowrap;
+}
+
+/* Upload category picker */
+.category-picker {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.cat-pick-btn {
+  background: white;
+  border: 2px solid var(--border);
+  color: var(--navy);
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Nunito', sans-serif;
+  transition: all 0.15s;
+}
+.cat-pick-btn:hover, .cat-pick-btn.selected {
+  background: var(--navy); color: white; border-color: var(--navy);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--gray);
+}
+.empty-state .es-icon { font-size: 4rem; margin-bottom: 1rem; }
+.empty-state h3 { color: var(--navy); margin-bottom: 0.5rem; }
+
+@media (max-width: 768px) {
+  .gallery-grid { columns: 2; }
+}
+@media (max-width: 480px) {
+  .gallery-grid { columns: 1; }
+}
+</style>
+</head>
+<body>
+<div id="navbar"></div>
+
+<div class="page-hero">
+  <div class="page-hero-label">School Life</div>
+  <h1>Photo Gallery</h1>
+  <p>Explore moments from our campus — classrooms, events, sports, hostel and more. Upload your own photos below!</p>
+</div>
+
+<div class="section">
+  <!-- UPLOAD ZONE -->
+  <div class="section-label">Add Photos</div>
+  <div class="section-title" style="margin-bottom:0.5rem">Upload School Photos</div>
+  <p style="color:var(--gray);margin-bottom:1rem;font-size:0.9rem;">Select a category first, then click the box to upload one or multiple photos.</p>
+  
+  <div class="category-picker" id="catPicker">
+    <button class="cat-pick-btn selected" data-cat="Campus">🏫 Campus</button>
+    <button class="cat-pick-btn" data-cat="Classroom">📚 Classroom</button>
+    <button class="cat-pick-btn" data-cat="Events">🎉 Events</button>
+    <button class="cat-pick-btn" data-cat="Sports">⚽ Sports</button>
+    <button class="cat-pick-btn" data-cat="Hostel">🏠 Hostel</button>
+    <button class="cat-pick-btn" data-cat="Results">🏆 Results</button>
+    <button class="cat-pick-btn" data-cat="Other">📷 Other</button>
+  </div>
+  <br>
+  <div class="upload-zone" id="uploadZone">
+    <input type="file" accept="image/*" multiple onchange="handleUpload(this)">
+    <div class="uz-icon">📸</div>
+    <h3>Click to Upload Photos</h3>
+    <p>Supports JPG, PNG, WEBP • Multiple files allowed</p>
+  </div>
+
+  <!-- FILTER -->
+  <div class="gallery-controls" id="filterRow">
+    <button class="filter-btn active" onclick="filterGallery('all',this)">All Photos</button>
+    <button class="filter-btn" onclick="filterGallery('Campus',this)">🏫 Campus</button>
+    <button class="filter-btn" onclick="filterGallery('Classroom',this)">📚 Classroom</button>
+    <button class="filter-btn" onclick="filterGallery('Events',this)">🎉 Events</button>
+    <button class="filter-btn" onclick="filterGallery('Sports',this)">⚽ Sports</button>
+    <button class="filter-btn" onclick="filterGallery('Hostel',this)">🏠 Hostel</button>
+    <button class="filter-btn" onclick="filterGallery('Results',this)">🏆 Results</button>
+    <button class="filter-btn" onclick="filterGallery('Other',this)">📷 Other</button>
+  </div>
+
+  <div class="gallery-grid" id="galleryGrid"></div>
+  <div class="empty-state" id="emptyState">
+    <div class="es-icon">🖼️</div>
+    <h3>No photos yet</h3>
+    <p>Upload school photos using the box above to fill the gallery!</p>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()">✕</button>
+  <img id="lbImg" src="" alt="">
+  <div class="lb-caption" id="lbCaption"></div>
+</div>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+<script>
+let photos = JSON.parse(localStorage.getItem('gallery-photos') || '[]');
+let activeFilter = 'all';
+let selectedCat = 'Campus';
+
+// Preset school photos using building image
+const presetPhotos = [
+  { id: 'preset-1', src: 'assets/building.jpg', cat: 'Campus', caption: 'School Main Building' },
+];
+
+function init() {
+  // Category picker
+  document.querySelectorAll('.cat-pick-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-pick-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedCat = btn.dataset.cat;
+    });
+  });
+  renderGallery();
+}
+
+function handleUpload(input) {
+  if (!input.files?.length) return;
+  Array.from(input.files).forEach(file => {
+    const r = new FileReader();
+    r.onload = e => {
+      const photo = {
+        id: 'photo-' + Date.now() + Math.random(),
+        src: e.target.result,
+        cat: selectedCat,
+        caption: file.name.replace(/\.[^.]+$/, ''),
+        timestamp: Date.now()
+      };
+      photos.push(photo);
+      savePhotos();
+      renderGallery();
+    };
+    r.readAsDataURL(file);
+  });
+  input.value = '';
+}
+
+function savePhotos() {
+  try { localStorage.setItem('gallery-photos', JSON.stringify(photos)); } catch(e) {
+    // If storage full, remove oldest
+    if (photos.length > 1) { photos.shift(); savePhotos(); }
+  }
+}
+
+function deletePhoto(id) {
+  photos = photos.filter(p => p.id !== id);
+  savePhotos();
+  renderGallery();
+}
+
+function renderGallery() {
+  const grid = document.getElementById('galleryGrid');
+  const empty = document.getElementById('emptyState');
+  const all = [...presetPhotos, ...photos];
+  const filtered = activeFilter === 'all' ? all : all.filter(p => p.cat === activeFilter);
+
+  if (filtered.length === 0) {
+    grid.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+
+  grid.innerHTML = filtered.map(p => `
+    <div class="gallery-item" data-id="${p.id}" onclick="openLightbox('${p.src}','${p.caption || p.cat}')">
+      <img src="${p.src}" alt="${p.caption || p.cat}" onerror="this.parentElement.style.display='none'">
+      <div class="cat-tag">${p.cat}</div>
+      <div class="gi-overlay"><span>${p.caption || p.cat}</span></div>
+      ${p.id.startsWith('preset') ? '' : `<button class="gi-delete" onclick="event.stopPropagation();deletePhoto('${p.id}')">✕</button>`}
+    </div>
+  `).join('');
+}
+
+function filterGallery(cat, btn) {
+  activeFilter = cat;
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderGallery();
+}
+
+function openLightbox(src, caption) {
+  document.getElementById('lbImg').src = src;
+  document.getElementById('lbCaption').textContent = caption;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox(e) {
+  if (!e || e.target === document.getElementById('lightbox') || e.target.classList.contains('lb-close')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox({target:document.getElementById('lightbox')}); });
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>

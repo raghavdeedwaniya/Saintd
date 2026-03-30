@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hostel — Saint "D" Public School</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.hostel-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.hostel-visual {
+  background: linear-gradient(135deg, var(--navy), var(--royal));
+  border-radius: 24px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(18,23,94,0.25);
+}
+.hostel-visual .big-icon { font-size: 6rem; margin-bottom: 1.5rem; }
+.hostel-visual h3 {
+  font-family: 'Playfair Display', serif;
+  color: white; font-size: 1.6rem; margin-bottom: 0.7rem;
+}
+.hostel-visual p { color: #b0bdf0; font-size: 0.92rem; line-height: 1.7; }
+
+.hostel-list { list-style: none; }
+.hostel-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.hostel-list li:last-child { border-bottom: none; }
+.hl-icon {
+  width: 42px; height: 42px;
+  background: var(--light);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.hostel-list li h4 { font-weight: 800; color: var(--navy); margin-bottom: 0.2rem; font-size: 0.95rem; }
+.hostel-list li p { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+
+/* AMENITIES GRID */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.2rem;
+}
+.amenity-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.8rem 1.2rem;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  border-bottom: 3px solid var(--royal);
+  transition: transform 0.2s;
+}
+.amenity-card:hover { transform: translateY(-4px); }
+.am-icon { font-size: 2.4rem; margin-bottom: 0.8rem; }
+.amenity-card h4 { font-weight: 800; color: var(--navy); font-size: 0.92rem; margin-bottom: 0.3rem; }
+.amenity-card p { color: var(--gray); font-size: 0.8rem; line-height: 1.5; }
+
+/* SAFETY */
+.safety-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+.safety-card {
+  background: var(--light);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.2rem;
+  align-items: flex-start;
+  border-left: 4px solid var(--royal);
+  transition: transform 0.2s;
+}
+.safety-card:hover { transform: translateX(4px); }
+.safety-card .s-icon { font-size: 2rem; flex-shrink: 0; }
+.safety-card h4 { font-weight: 800; color: var(--navy); margin-bottom: 0.3rem; }
+.safety-card p { color: var(--gray); font-size: 0.87rem; line-height: 1.6; }
+
+/* ENQUIRY FORM */
+.enquiry-section {
+  background: linear-gradient(135deg, var(--navy), var(--royal));
+  padding: 5rem 2rem;
+}
+.enquiry-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.enquiry-inner h2 {
+  font-family: 'Playfair Display', serif;
+  color: white; font-size: 2rem; margin-bottom: 0.7rem;
+}
+.enquiry-inner p { color: #b0bdf0; margin-bottom: 2.5rem; }
+.eq-form {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 18px;
+  padding: 2.5rem;
+  backdrop-filter: blur(10px);
+  text-align: left;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.form-group { margin-bottom: 1rem; }
+.form-group label {
+  display: block;
+  color: #b0bdf0;
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--gold); }
+.form-group select option { background: var(--navy); color: white; }
+.form-success {
+  display: none;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hostel-intro { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="navbar"></div>
+
+<div class="page-hero">
+  <div class="page-hero-label">Student Accommodation</div>
+  <h1>Hostel Facilities</h1>
+  <p>A safe, comfortable, and nurturing home away from home — for students from outside Mandal.</p>
+</div>
+
+<!-- INTRO -->
+<div class="hostel-intro">
+  <div>
+    <div class="section-label">Our Hostel</div>
+    <div class="section-title">Where Students Thrive</div>
+    <p style="color:var(--gray);margin-bottom:2rem;line-height:1.8;font-size:0.97rem;">Saint "D" Public School offers modern hostel facilities for students coming from villages and cities outside Mandal. Our hostel is designed to give students the best environment to focus on studies while staying comfortable and safe.</p>
+    <ul class="hostel-list">
+      <li>
+        <div class="hl-icon">❄️</div>
+        <div><h4>Air-Conditioned Rooms</h4><p>All hostel rooms are fully air-conditioned for comfort throughout the year.</p></div>
+      </li>
+      <li>
+        <div class="hl-icon">📹</div>
+        <div><h4>24/7 CCTV Surveillance</h4><p>The entire hostel is monitored round the clock by high-resolution CCTV cameras.</p></div>
+      </li>
+      <li>
+        <div class="hl-icon">🍽️</div>
+        <div><h4>Nutritious Meals</h4><p>Healthy, home-cooked meals provided three times a day, including fresh breakfast, lunch and dinner.</p></div>
+      </li>
+      <li>
+        <div class="hl-icon">📚</div>
+        <div><h4>Dedicated Study Hours</h4><p>Structured evening study time with teacher supervision for focused academic work.</p></div>
+      </li>
+      <li>
+        <div class="hl-icon">🏥</div>
+        <div><h4>Near Government Hospital</h4><p>Our campus is located next to the Government Hospital for immediate medical access if needed.</p></div>
+      </li>
+    </ul>
+  </div>
+  <div class="hostel-visual">
+    <div class="big-icon">🏠</div>
+    <h3>A Home Away From Home</h3>
+    <p>Our hostel provides students with the discipline, routine, and comfort they need to excel academically while staying safe and healthy throughout the school year.</p>
+    <br>
+    <a href="tel:7665267777" class="btn btn-gold" style="margin-top:1rem;">📞 Call for Hostel Enquiry</a>
+  </div>
+</div>
+
+<!-- AMENITIES -->
+<div class="bg-light">
+  <div class="section">
+    <div class="section-label">What We Provide</div>
+    <div class="section-title">Hostel Amenities</div>
+    <div class="section-subtitle">Everything a student needs for a comfortable and productive stay.</div>
+    <div class="amenities-grid">
+      <div class="amenity-card"><div class="am-icon">❄️</div><h4>AC Rooms</h4><p>Air-conditioned rooms for comfort in every season.</p></div>
+      <div class="amenity-card"><div class="am-icon">🛏️</div><h4>Clean Beds</h4><p>Fresh bedding changed regularly. Hygienic room maintenance.</p></div>
+      <div class="amenity-card"><div class="am-icon">🍱</div><h4>3 Meals Daily</h4><p>Nutritious breakfast, lunch and dinner every day.</p></div>
+      <div class="amenity-card"><div class="am-icon">💡</div><h4>24/7 Electricity</h4><p>Uninterrupted power supply with backup generator.</p></div>
+      <div class="amenity-card"><div class="am-icon">🚿</div><h4>Clean Bathrooms</h4><p>Well-maintained washrooms with hot and cold water.</p></div>
+      <div class="amenity-card"><div class="am-icon">📖</div><h4>Study Room</h4><p>Quiet, well-lit study hall for evening study sessions.</p></div>
+      <div class="amenity-card"><div class="am-icon">📞</div><h4>Parent Communication</h4><p>Regular updates to parents about student progress.</p></div>
+      <div class="amenity-card"><div class="am-icon">🏃</div><h4>Recreation Time</h4><p>Scheduled outdoor play and recreation periods daily.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- SAFETY -->
+<div class="section">
+  <div class="section-label">Student Safety</div>
+  <div class="section-title">Safety & Security Measures</div>
+  <div class="section-subtitle">We take the safety of our hostel students extremely seriously. Here is how we keep them protected.</div>
+  <div class="safety-grid">
+    <div class="safety-card"><div class="s-icon">📹</div><div><h4>24/7 CCTV Cameras</h4><p>High-resolution cameras installed throughout the hostel premises for continuous monitoring.</p></div></div>
+    <div class="safety-card"><div class="s-icon">🚪</div><div><h4>Controlled Entry/Exit</h4><p>Strict entry and exit protocols. Only authorized persons allowed inside the hostel premises.</p></div></div>
+    <div class="safety-card"><div class="s-icon">👨‍⚕️</div><div><h4>Medical Proximity</h4><p>Located right next to the Government Hospital. Medical help is always just a minute away.</p></div></div>
+    <div class="safety-card"><div class="s-icon">👩‍🏫</div><div><h4>Resident Warden</h4><p>Dedicated wardens on duty at all times to supervise and support students.</p></div></div>
+    <div class="safety-card"><div class="s-icon">📱</div><div><h4>Regular Parent Updates</h4><p>Parents are regularly informed about their child's health, discipline, and academic progress.</p></div></div>
+    <div class="safety-card"><div class="s-icon">🔒</div><div><h4>Secure Premises</h4><p>Fully secured and gated compound with night guards on duty.</p></div></div>
+  </div>
+</div>
+
+<!-- ENQUIRY FORM -->
+<div class="enquiry-section">
+  <div class="enquiry-inner">
+    <h2>Hostel Admission Enquiry</h2>
+    <p>Interested in hostel admission for your child? Fill in the form below and we'll get back to you.</p>
+    <div class="eq-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Student Name</label>
+          <input type="text" placeholder="Full name" id="hf-name">
+        </div>
+        <div class="form-group">
+          <label>Class</label>
+          <select id="hf-class">
+            <option value="">Select Class</option>
+            <option>Class 6</option><option>Class 7</option><option>Class 8</option>
+            <option>Class 9</option><option>Class 10</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Parent Name</label>
+          <input type="text" placeholder="Parent / guardian name" id="hf-parent">
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input type="tel" placeholder="10-digit mobile number" id="hf-phone">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Your Village / City</label>
+        <input type="text" placeholder="Where are you coming from?" id="hf-city">
+      </div>
+      <div class="form-group">
+        <label>Message (optional)</label>
+        <textarea rows="3" placeholder="Any questions or specific requirements..." id="hf-msg"></textarea>
+      </div>
+      <button class="btn btn-gold" style="width:100%;justify-content:center;display:block;" onclick="submitHostelForm()">
+        📩 Submit Enquiry
+      </button>
+      <div class="form-success" id="hf-success">
+        ✅ <strong>Thank you!</strong> Your hostel enquiry has been noted. Please call us at <strong>7665267777</strong> for immediate assistance.
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+<script>
+function submitHostelForm() {
+  const name = document.getElementById('hf-name').value.trim();
+  const phone = document.getElementById('hf-phone').value.trim();
+  if (!name || !phone) {
+    alert('Please fill in the Student Name and Mobile Number at minimum.');
+    return;
+  }
+  document.getElementById('hf-success').style.display = 'block';
+  ['hf-name','hf-class','hf-parent','hf-phone','hf-city','hf-msg'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el.tagName === 'SELECT') el.selectedIndex = 0;
+    else el.value = '';
+  });
+}
+</script>
+</body>
+</html>

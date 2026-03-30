@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Saint "D" Public School</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.about-img-block {
+  position: relative;
+}
+.about-img-block img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+  height: 380px;
+  box-shadow: 0 20px 50px rgba(18,23,94,0.18);
+}
+.about-img-badge {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  background: var(--navy);
+  color: white;
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  border: 3px solid var(--gold);
+}
+.about-img-badge strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: var(--gold);
+}
+.about-img-badge span { font-size: 0.78rem; color: #b0bdf0; }
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  color: var(--navy);
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+.about-text p {
+  color: var(--gray);
+  font-size: 0.97rem;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+}
+.about-text .highlight {
+  background: var(--light);
+  border-left: 4px solid var(--royal);
+  border-radius: 0 10px 10px 0;
+  padding: 1rem 1.2rem;
+  color: var(--navy);
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+/* MISSION VISION */
+.mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.5rem;
+}
+.mv-card {
+  background: white;
+  border-radius: 18px;
+  padding: 2.5rem 1.8rem;
+  text-align: center;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  border-top: 4px solid var(--royal);
+  transition: transform 0.2s;
+}
+.mv-card:nth-child(2) { border-top-color: var(--red); }
+.mv-card:nth-child(3) { border-top-color: var(--gold); }
+.mv-card:hover { transform: translateY(-5px); }
+.mv-icon { font-size: 2.8rem; margin-bottom: 1rem; }
+.mv-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+.mv-card p { color: var(--gray); font-size: 0.9rem; line-height: 1.7; }
+
+/* PRINCIPAL */
+.principal-section {
+  background: linear-gradient(135deg, var(--navy), var(--royal));
+  padding: 5rem 2rem;
+}
+.principal-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.principal-photo-wrap { display: flex; justify-content: center; }
+.principal-photo {
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--gold);
+  display: block;
+}
+.principal-msg blockquote {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: white;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 3px solid var(--gold);
+}
+.principal-msg strong { color: var(--gold); display: block; font-size: 1rem; margin-bottom: 0.2rem; }
+.principal-msg span { color: #8894c8; font-size: 0.85rem; }
+
+/* STAFF GRID */
+.staff-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.staff-card {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  border-bottom: 3px solid var(--royal);
+  transition: transform 0.2s;
+}
+.staff-card:hover { transform: translateY(-4px); }
+.staff-photo-wrap {
+  width: 80px; height: 80px;
+  margin: 0 auto 1rem;
+}
+.staff-photo {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--light);
+  display: block;
+}
+.staff-card h4 { font-weight: 800; color: var(--navy); font-size: 0.95rem; margin-bottom: 0.2rem; }
+.staff-card .subject { color: var(--royal); font-size: 0.8rem; font-weight: 700; }
+.staff-card .exp { color: var(--gray); font-size: 0.75rem; margin-top: 0.3rem; }
+
+/* MILESTONES */
+.timeline {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 2rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--royal), var(--sky));
+  border-radius: 2px;
+}
+.tl-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+  padding-left: 2rem;
+}
+.tl-dot {
+  position: absolute;
+  left: -2.6rem;
+  top: 0.4rem;
+  width: 18px; height: 18px;
+  border-radius: 50%;
+  background: var(--royal);
+  border: 3px solid white;
+  box-shadow: 0 0 0 3px var(--royal);
+}
+.tl-year {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--royal);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+.tl-item h4 { font-weight: 800; color: var(--navy); margin-bottom: 0.3rem; }
+.tl-item p { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
+
+@media (max-width: 768px) {
+  .about-intro { grid-template-columns: 1fr; }
+  .mv-grid { grid-template-columns: 1fr; }
+  .principal-inner { grid-template-columns: 1fr; text-align: center; }
+  .principal-msg blockquote { padding-left: 1rem; }
+}
+</style>
+</head>
+<body>
+<div id="navbar"></div>
+
+<div class="page-hero">
+  <div class="page-hero-label">Our Story</div>
+  <h1>About Our School</h1>
+  <p>Discover the mission, values, and dedicated team behind Saint "D" Public School — Mandal's most trusted name in education.</p>
+</div>
+
+<!-- ABOUT INTRO -->
+<div class="about-intro">
+  <div class="about-img-block">
+    <img src="assets/building.jpg" alt="School Building" onerror="this.style.background='linear-gradient(135deg,#12175e,#2338b0)';this.style.display='block';this.removeAttribute('src')">
+    <div class="about-img-badge">
+      <strong>Est. Excellence</strong>
+      <span>Mandal, Rajasthan</span>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-label">Who We Are</div>
+    <h2>Building Tomorrow's Leaders, Today</h2>
+    <p>Saint "D" Public School is one of Mandal's most respected educational institutions, proudly affiliated with the Rajasthan Board of Secondary Education (RBSE). We offer comprehensive schooling from Play Group to Class 10.</p>
+    <div class="highlight">"Our mission is simple — every student who walks through our gates will walk out with the knowledge, character, and confidence to succeed in life."</div>
+    <p>Located near the Government Hospital on Dhovani Nadi Road, Mandal, our campus is equipped with modern classrooms, a fully supervised hostel, and a caring team of educators who treat every student as their own.</p>
+    <a href="contact.html" class="btn btn-navy">Enquire About Admissions →</a>
+  </div>
+</div>
+
+<!-- MISSION VISION VALUES -->
+<div class="bg-light">
+  <div class="section">
+    <div class="section-label">Our Foundation</div>
+    <div class="section-title">Mission, Vision & Values</div>
+    <div class="section-subtitle">The principles that guide everything we do at Saint "D" Public School.</div>
+    <div class="mv-grid">
+      <div class="mv-card">
+        <div class="mv-icon">🎯</div>
+        <h3>Our Mission</h3>
+        <p>To provide quality, affordable education that empowers every student with academic excellence, strong moral values, and life skills to face the world with confidence.</p>
+      </div>
+      <div class="mv-card">
+        <div class="mv-icon">🔭</div>
+        <h3>Our Vision</h3>
+        <p>To be the most trusted school in Rajasthan — recognized for 100% results, character development, and a safe, nurturing environment for every child.</p>
+      </div>
+      <div class="mv-card">
+        <div class="mv-icon">❤️</div>
+        <h3>Our Values</h3>
+        <p>Discipline, dedication, respect, honesty, and compassion form the core of our school culture. We nurture not just students — but good human beings.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PRINCIPAL MESSAGE -->
+<div class="principal-section">
+  <div class="principal-inner">
+    <div>
+      <div class="principal-photo-wrap">
+        <img class="principal-photo" alt="Principal" src="assets/principal.jpg">
+      </div>
+    </div>
+    <div class="principal-msg">
+      <div class="section-label" style="color:var(--sky)">Message From</div>
+      <h2 style="font-family:'Playfair Display',serif;color:white;font-size:1.8rem;margin-bottom:1.5rem;">The Principal's Desk</h2>
+      <blockquote>
+        "At Saint 'D' Public School, we believe that every child is gifted. Our role as educators is to identify that gift and nurture it. With 100% results every year, we prove that when dedicated teachers meet motivated students, excellence follows naturally."
+      </blockquote>
+      <strong>School Principal</strong>
+      <span>Saint "D" Public School, Mandal</span>
+    </div>
+  </div>
+</div>
+
+<!-- OUR TEAM -->
+<div class="section">
+  <div class="section-label">Our Team</div>
+  <div class="section-title">Dedicated Faculty</div>
+  <div class="section-subtitle">Our teachers are the backbone of our success — dedicated, experienced, and passionate about education.</div>
+  <div class="staff-grid" id="staffGrid"></div>
+</div>
+
+<!-- MILESTONES -->
+<div class="bg-light">
+  <div class="section">
+    <div class="section-label">Our Journey</div>
+    <div class="section-title">School Milestones</div>
+    <div class="section-subtitle">Key moments in the growth of Saint "D" Public School.</div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Foundation</div>
+        <h4>School Established</h4>
+        <p>Saint "D" Public School was founded with a vision to provide quality education to children of Mandal and surrounding areas.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Growth</div>
+        <h4>Classes Expanded to Class 10</h4>
+        <p>Successfully expanded from primary to secondary level, adding Classes 9 and 10 with RBSE board affiliation.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">Hostel Launch</div>
+        <h4>AC Hostel Facility Inaugurated</h4>
+        <p>Launched modern, air-conditioned hostel with 24/7 CCTV surveillance to serve outstation students.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-year">2026</div>
+        <h4>100% Results — RBSE Board</h4>
+        <p>Achieved 100% Pass with 100% First Division in RBSE Class 10 Board Exams 2026. Top score: 95.83% by Mohit Khatik.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+<script>
+const staffPhotos = ['assets/staff1.jpg','assets/staff2.jpg','assets/staff3.jpg','assets/staff4.jpg','assets/staff5.jpg','assets/staff6.jpg'];
+const staff = [
+  { name:'Head Teacher',    subject:'School Head',         exp:'15+ Years', photo: staffPhotos[0] },
+  { name:'Science Teacher', subject:'Physics & Chemistry', exp:'10+ Years', photo: staffPhotos[1] },
+  { name:'Math Teacher',    subject:'Mathematics',         exp:'12+ Years', photo: staffPhotos[2] },
+  { name:'Hindi Teacher',   subject:'Hindi & Sanskrit',    exp:'8+ Years',  photo: staffPhotos[3] },
+  { name:'English Teacher', subject:'English',             exp:'9+ Years',  photo: staffPhotos[4] },
+  { name:'Social Studies',  subject:'History & Geography', exp:'7+ Years',  photo: staffPhotos[5] },
+];
+
+document.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('staffGrid');
+  grid.innerHTML = staff.map(s => `
+    <div class="staff-card">
+      <div class="staff-photo-wrap">
+        <img class="staff-photo" alt="${s.name}" src="${s.photo}">
+      </div>
+      <h4>${s.name}</h4>
+      <div class="subject">${s.subject}</div>
+      <div class="exp">Experience: ${s.exp}</div>
+    </div>
+  `).join('');
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact & Admissions — Saint "D" Public School</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  padding: 5rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+/* CONTACT INFO */
+.contact-info-card {
+  background: var(--navy);
+  border-radius: 22px;
+  padding: 3rem 2.5rem;
+  color: white;
+  position: sticky;
+  top: 90px;
+}
+.contact-info-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.ci-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: 1.8rem;
+}
+.ci-icon {
+  width: 46px; height: 46px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+.ci-item h4 { font-size: 0.78rem; font-weight: 800; color: var(--sky); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+.ci-item p, .ci-item a { color: #d0d8f0; font-size: 0.95rem; text-decoration: none; line-height: 1.5; }
+.ci-item a:hover { color: var(--gold); }
+
+.social-links {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.social-btn {
+  background: rgba(255,255,255,0.08);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 0.82rem;
+  font-weight: 700;
+  transition: background 0.2s;
+  display: flex; align-items: center; gap: 6px;
+}
+.social-btn:hover { background: rgba(255,255,255,0.15); }
+
+/* ADMISSION FORM */
+.admission-form-card {
+  background: white;
+  border-radius: 22px;
+  padding: 3rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
+  border-top: 5px solid var(--royal);
+}
+.admission-form-card h3 {
+  font-family: 'Playfair Display', serif;
+  color: var(--navy);
+  font-size: 1.5rem;
+  margin-bottom: 0.4rem;
+}
+.admission-form-card .form-desc {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.form-group {
+  margin-bottom: 1.2rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 2px solid var(--border);
+  background: var(--pale);
+  color: var(--text);
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 0.92rem;
+  font-family: 'Nunito', sans-serif;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--royal);
+  background: white;
+}
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.req-note {
+  font-size: 0.78rem;
+  color: var(--red);
+  margin-bottom: 1.5rem;
+}
+.form-success-box {
+  display: none;
+  background: #e8fef0;
+  border: 2px solid #22c55e;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.form-success-box h4 { color: #15803d; font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
+.form-success-box p { color: #166534; font-size: 0.9rem; }
+
+/* MAP AREA */
+.map-section {
+  background: var(--light);
+  padding: 4rem 2rem;
+}
+.map-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.map-box {
+  background: linear-gradient(135deg, #e8eeff, #d4dcff);
+  border-radius: 20px;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed #9aaef0;
+  padding: 3rem;
+  margin-top: 2rem;
+}
+.map-box .map-ico { font-size: 4rem; margin-bottom: 1rem; }
+.map-box h3 { color: var(--navy); font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem; }
+.map-box p { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6; }
+
+/* QUICK CONTACT CHIPS */
+.quick-contacts {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.qc-chip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 2px solid var(--border);
+  border-radius: 12px;
+  padding: 12px 18px;
+  text-decoration: none;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.qc-chip:hover { border-color: var(--royal); transform: translateY(-2px); }
+.qc-chip span:first-child { font-size: 1.3rem; }
+.qc-chip div strong { display: block; color: var(--navy); font-size: 0.88rem; }
+.qc-chip div span { color: var(--gray); font-size: 0.78rem; }
+
+@media (max-width: 900px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-info-card { position: static; }
+  .form-row-2 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div id="navbar"></div>
+
+<div class="page-hero">
+  <div class="page-hero-label">Get In Touch</div>
+  <h1>Contact & Admissions</h1>
+  <p>Ready to join the Saint "D" family? Reach out for admissions, hostel enquiries, or any information about our school.</p>
+</div>
+
+<!-- QUICK CONTACT -->
+<div style="max-width:1200px;margin:3rem auto;padding:0 2rem;">
+  <div class="section-label">Quick Contact</div>
+  <div class="section-title" style="margin-bottom:1.5rem;">Reach Us Directly</div>
+  <div class="quick-contacts">
+    <a href="tel:7665267777" class="qc-chip">
+      <span>📞</span>
+      <div><strong>7665267777</strong><span>Call us now</span></div>
+    </a>
+    <a href="mailto:saintdschool1@gmail.com" class="qc-chip">
+      <span>✉️</span>
+      <div><strong>saintdschool1@gmail.com</strong><span>Email us</span></div>
+    </a>
+    <div class="qc-chip">
+      <span>📍</span>
+      <div><strong>Near Govt. Hospital</strong><span>Dhovani Nadi Road, Mandal</span></div>
+    </div>
+    <div class="qc-chip">
+      <span>🕐</span>
+      <div><strong>Mon – Sat</strong><span>8:00 AM – 5:00 PM</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN LAYOUT -->
+<div class="contact-layout">
+
+  <!-- LEFT: CONTACT INFO -->
+  <div class="contact-info-card">
+    <h3>📌 School Information</h3>
+    <div class="ci-item">
+      <div class="ci-icon">📞</div>
+      <div>
+        <h4>Phone</h4>
+        <a href="tel:7665267777">7665267777</a>
+      </div>
+    </div>
+    <div class="ci-item">
+      <div class="ci-icon">✉️</div>
+      <div>
+        <h4>Email</h4>
+        <a href="mailto:saintdschool1@gmail.com">saintdschool1@gmail.com</a>
+      </div>
+    </div>
+    <div class="ci-item">
+      <div class="ci-icon">📍</div>
+      <div>
+        <h4>Address</h4>
+        <p>Near Govt. Hospital,<br>Dhovani Nadi Road,<br>Mandal, Rajasthan</p>
+      </div>
+    </div>
+    <div class="ci-item">
+      <div class="ci-icon">🕐</div>
+      <div>
+        <h4>Office Hours</h4>
+        <p>Monday – Saturday<br>8:00 AM – 5:00 PM</p>
+      </div>
+    </div>
+    <div class="ci-item">
+      <div class="ci-icon">🎓</div>
+      <div>
+        <h4>Admissions Open</h4>
+        <p>Session 2026–27<br>Play Group to Class 10</p>
+      </div>
+    </div>
+    <div class="social-links">
+      <a href="tel:7665267777" class="social-btn">📞 Call Now</a>
+      <a href="mailto:saintdschool1@gmail.com" class="social-btn">✉️ Email</a>
+    </div>
+  </div>
+
+  <!-- RIGHT: ADMISSION FORM -->
+  <div class="admission-form-card">
+    <h3>🎓 Admission Enquiry Form</h3>
+    <p class="form-desc">Fill in the details below and our team will get back to you within 24 hours. Fields marked * are required.</p>
+    <p class="req-note">* Required fields</p>
+
+    <div class="form-row-2">
+      <div class="form-group">
+        <label>Student Name *</label>
+        <input type="text" placeholder="Full name of student" id="f-sname">
+      </div>
+      <div class="form-group">
+        <label>Date of Birth</label>
+        <input type="date" id="f-dob">
+      </div>
+    </div>
+    <div class="form-row-2">
+      <div class="form-group">
+        <label>Applying for Class *</label>
+        <select id="f-class">
+          <option value="">Select class</option>
+          <option>Play Group</option><option>Nursery</option><option>KG</option>
+          <option>Class 1</option><option>Class 2</option><option>Class 3</option>
+          <option>Class 4</option><option>Class 5</option><option>Class 6</option>
+          <option>Class 7</option><option>Class 8</option><option>Class 9</option>
+          <option>Class 10</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Gender</label>
+        <select id="f-gender">
+          <option value="">Select</option>
+          <option>Male</option><option>Female</option><option>Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-row-2">
+      <div class="form-group">
+        <label>Father's Name</label>
+        <input type="text" placeholder="Father's full name" id="f-fname">
+      </div>
+      <div class="form-group">
+        <label>Mother's Name</label>
+        <input type="text" placeholder="Mother's full name" id="f-mname">
+      </div>
+    </div>
+    <div class="form-row-2">
+      <div class="form-group">
+        <label>Mobile Number *</label>
+        <input type="tel" placeholder="10-digit number" id="f-phone">
+      </div>
+      <div class="form-group">
+        <label>Email (optional)</label>
+        <input type="email" placeholder="email@example.com" id="f-email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Home Village / City</label>
+      <input type="text" placeholder="Where are you coming from?" id="f-city">
+    </div>
+    <div class="form-group">
+      <label>Hostel Required?</label>
+      <select id="f-hostel">
+        <option value="">Select</option>
+        <option>Yes, hostel required</option>
+        <option>No, day scholar</option>
+        <option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Message / Questions</label>
+      <textarea rows="3" placeholder="Any questions, previous school details, or special requirements..." id="f-msg"></textarea>
+    </div>
+    <button class="btn btn-navy" style="width:100%;text-align:center;display:block;font-size:1rem;" onclick="submitAdmissionForm()">
+      📩 Submit Admission Enquiry
+    </button>
+    <div class="form-success-box" id="f-success">
+      <h4>✅ Enquiry Submitted!</h4>
+      <p>Thank you for your interest in Saint "D" Public School. Our team will contact you at the number provided within 24 hours.<br><br>
+      For immediate assistance, call us at <strong>7665267777</strong>.</p>
+    </div>
+  </div>
+</div>
+
+<!-- MAP -->
+<div class="map-section">
+  <div class="map-inner">
+    <div class="section-label">Find Us</div>
+    <div class="section-title">Our Location</div>
+    <div class="map-box">
+      <div>
+        <div class="map-ico">🗺️</div>
+        <h3>Near Govt. Hospital, Mandal</h3>
+        <p>Dhovani Nadi Road, Mandal, Rajasthan<br>Easily accessible by road from Bhilwara, Jahazpur and surrounding areas.</p>
+        <a href="https://maps.google.com/?q=Mandal+Rajasthan+Near+Government+Hospital" target="_blank" class="btn btn-navy">📍 Open in Google Maps</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+<script>
+function submitAdmissionForm() {
+  const sname = document.getElementById('f-sname').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const cls = document.getElementById('f-class').value;
+  if (!sname || !phone || !cls) {
+    alert('Please fill in Student Name, Class, and Mobile Number.');
+    return;
+  }
+  document.getElementById('f-success').style.display = 'block';
+  document.getElementById('f-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+</script>
+</body>
+</html>

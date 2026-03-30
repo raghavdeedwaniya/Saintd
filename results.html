@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Results 2026 — Saint "D" Public School</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.stats-band {
+  background: linear-gradient(90deg, var(--red), #d44);
+  padding: 3rem 2rem;
+}
+.stats-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+.stat-box strong {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+.stat-box span { color: rgba(255,255,255,0.85); font-size: 0.88rem; font-weight: 700; }
+
+.toppers-full {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+.tc2 {
+  background: var(--light);
+  border-radius: 20px;
+  padding: 2rem 1rem 1.5rem;
+  text-align: center;
+  border: 2px solid transparent;
+  transition: all 0.25s;
+  position: relative;
+}
+.tc2.gold {
+  background: linear-gradient(155deg, var(--navy), #2338b0);
+  border-color: var(--gold);
+  box-shadow: 0 14px 40px rgba(18,23,94,0.25);
+}
+.tc2:not(.gold):hover { border-color: var(--royal); transform: translateY(-4px); box-shadow: 0 12px 25px rgba(45,53,192,0.12); }
+.tc2-rank {
+  position: absolute; top: 12px; right: 14px;
+  background: var(--gold); color: var(--navy);
+  width: 32px; height: 32px;
+  border-radius: 50%; font-weight: 900; font-size: 0.8rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.tc2-photo-wrap {
+  width: 100px; height: 100px;
+  margin: 0 auto 1rem;
+}
+.tc2-photo {
+  width: 100px; height: 100px;
+  border-radius: 50%; object-fit: cover;
+  border: 3px solid var(--royal);
+  background: #dde3ff;
+  display: block;
+}
+.tc2.gold .tc2-photo { border-color: var(--gold); }
+.tc2-score {
+  font-size: 2rem; font-weight: 900;
+  font-family: 'Playfair Display', serif;
+  color: var(--royal); line-height: 1;
+  margin-bottom: 0.2rem;
+}
+.tc2.gold .tc2-score { color: var(--gold); }
+.tc2-name { font-weight: 800; font-size: 0.95rem; color: var(--navy); margin-bottom: 0.2rem; }
+.tc2.gold .tc2-name { color: white; }
+.tc2-lbl { font-size: 0.7rem; color: var(--gray); font-weight: 700; text-transform: uppercase; }
+.tc2.gold .tc2-lbl { color: rgba(255,255,255,0.6); }
+
+.photo-note {
+  background: #fffbea;
+  border: 2px dashed var(--gold);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 12px;
+  font-size: 0.88rem; color: #7a5c00; font-weight: 600;
+}
+.photo-note span:first-child { font-size: 1.4rem; }
+
+/* RESULT TABLE */
+.result-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+.result-table thead { background: var(--navy); color: white; }
+.result-table thead th {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.result-table tbody tr {
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+.result-table tbody tr:last-child { border-bottom: none; }
+.result-table tbody tr:hover { background: var(--light); }
+.result-table tbody tr.top-row { background: #fffbea; }
+.result-table td {
+  padding: 0.9rem 1.2rem;
+  font-size: 0.92rem;
+  color: var(--text);
+}
+.result-table td .rank-badge {
+  display: inline-flex;
+  align-items: center; justify-content: center;
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--light);
+  font-weight: 900;
+  font-size: 0.8rem;
+  color: var(--navy);
+}
+.result-table td:last-child { font-weight: 800; color: var(--royal); }
+.result-table tr.top-row td:last-child { color: var(--red); }
+
+/* ACHIEVEMENT BADGES */
+.achieve-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+}
+.achieve-card {
+  background: white;
+  border-radius: 14px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
+  border-bottom: 3px solid var(--gold);
+}
+.achieve-icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
+.achieve-card h4 { font-weight: 800; color: var(--navy); margin-bottom: 0.3rem; }
+.achieve-card p { color: var(--gray); font-size: 0.85rem; }
+
+@media (max-width: 700px) {
+  .stats-inner { grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+  .stat-box strong { font-size: 2.2rem; }
+}
+</style>
+</head>
+<body>
+<div id="navbar"></div>
+
+<div class="page-hero">
+  <div class="page-hero-label">Academic Excellence</div>
+  <h1>RBSE Board Results 2026</h1>
+  <p>Class 10 Board Examinations — Saint "D" Public School, Mandal achieves 100% Pass with 100% First Division.</p>
+</div>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stats-inner">
+    <div class="stat-box"><strong>100%</strong><span>Overall Pass Rate</span></div>
+    <div class="stat-box"><strong>100%</strong><span>First Division</span></div>
+    <div class="stat-box"><strong>95.83%</strong><span>Top Score</span></div>
+    <div class="stat-box"><strong>6</strong><span>Students in Top Ranks</span></div>
+  </div>
+</div>
+
+<!-- TOPPERS -->
+<div class="section">
+  <div class="section-label">Hall of Fame</div>
+  <div class="section-title">Class 10 Toppers 2026</div>
+  <div class="toppers-full">
+    <div class="tc2 gold">
+      <div class="tc2-rank">👑</div>
+      <div class="tc2-photo-wrap"><img class="tc2-photo" alt="Mohit Khatik" src="assets/topper1.jpg"></div>
+      <div class="tc2-score">95.83%</div><div class="tc2-name">Mohit Khatik</div><div class="tc2-lbl">🏆 School Topper</div>
+    </div>
+    <div class="tc2">
+      <div class="tc2-rank">2</div>
+      <div class="tc2-photo-wrap"><img class="tc2-photo" alt="Bhuwan Bhatt" src="assets/topper2.jpg"></div>
+      <div class="tc2-score">93.33%</div><div class="tc2-name">Bhuwan Bhatt</div><div class="tc2-lbl">2nd Rank</div>
+    </div>
+    <div class="tc2">
+      <div class="tc2-rank">3</div>
+      <div class="tc2-photo-wrap"><img class="tc2-photo" alt="Bheru Lal Gurjar" src="assets/topper3.jpg"></div>
+      <div class="tc2-score">92.67%</div><div class="tc2-name">Bheru Lal Gurjar</div><div class="tc2-lbl">3rd Rank</div>
+    </div>
+    <div class="tc2">
+      <div class="tc2-rank">4</div>
+      <div class="tc2-photo-wrap"><img class="tc2-photo" alt="Kinjal Meemroth" src="assets/topper4.jpg"></div>
+      <div class="tc2-score">92.17%</div><div class="tc2-name">Kinjal Meemroth</div><div class="tc2-lbl">4th Rank</div>
+    </div>
+    <div class="tc2">
+      <div class="tc2-rank">5</div>
+      <div class="tc2-photo-wrap"><img class="tc2-photo" alt="Lakshya Dudawat" src="assets/topper5.jpg"></div>
+      <div class="tc2-score">91.33%</div><div class="tc2-name">Lakshya Dudawat</div><div class="tc2-lbl">5th Rank</div>
+    </div>
+    <div class="tc2">
+      <div class="tc2-rank">6</div>
+      <div class="tc2-photo-wrap"><img class="tc2-photo" alt="Radhika Kanwar" src="assets/topper6.jpg"></div>
+      <div class="tc2-score">90.17%</div><div class="tc2-name">Radhika Kanwar</div><div class="tc2-lbl">6th Rank</div>
+    </div>
+  </div>
+</div>
+
+<!-- RESULT TABLE -->
+<div class="bg-light">
+  <div class="section">
+    <div class="section-label">Detailed Results</div>
+    <div class="section-title">All Toppers — Score Sheet</div>
+    <div class="section-subtitle">RBSE Class 10 Board Exam Results — Session 2025–26</div>
+    <table class="result-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Student Name</th>
+          <th>Percentage</th>
+          <th>Division</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="top-row">
+          <td><span class="rank-badge">👑</span></td>
+          <td><strong>Mohit Khatik</strong></td>
+          <td>95.83%</td>
+          <td>🥇 First Division — School Topper</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">2</span></td>
+          <td>Bhuwan Bhatt</td>
+          <td>93.33%</td>
+          <td>First Division</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">3</span></td>
+          <td>Bheru Lal Gurjar</td>
+          <td>92.67%</td>
+          <td>First Division</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">4</span></td>
+          <td>Kinjal Meemroth</td>
+          <td>92.17%</td>
+          <td>First Division</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">5</span></td>
+          <td>Lakshya Dudawat</td>
+          <td>91.33%</td>
+          <td>First Division</td>
+        </tr>
+        <tr>
+          <td><span class="rank-badge">6</span></td>
+          <td>Radhika Kanwar</td>
+          <td>90.17%</td>
+          <td>First Division</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:1.5rem;color:var(--gray);font-size:0.85rem;font-style:italic;">* All students appeared in RBSE Board Class 10 Examination 2026. School achieved 100% pass with 100% First Division.</p>
+  </div>
+</div>
+
+<!-- ACHIEVEMENTS -->
+<div class="section">
+  <div class="section-label">Our Record</div>
+  <div class="section-title">Academic Achievements</div>
+  <div class="achieve-grid">
+    <div class="achieve-card"><div class="achieve-icon">🏆</div><h4>100% Pass Rate</h4><p>Every student who appeared in RBSE 2026 has passed with flying colours.</p></div>
+    <div class="achieve-card"><div class="achieve-icon">🥇</div><h4>100% First Division</h4><p>Not a single student scored below First Division. All achieved 60%+ aggregate.</p></div>
+    <div class="achieve-card"><div class="achieve-icon">📈</div><h4>Top Score 95.83%</h4><p>Mohit Khatik set a new school record with 95.83% in the board exams.</p></div>
+    <div class="achieve-card"><div class="achieve-icon">📚</div><h4>Weekly Test Series</h4><p>Our structured weekly tests were the key to building confidence and exam readiness.</p></div>
+  </div>
+</div>
+
+<div id="footer"></div>
+<script src="shared.js"></script>
+</body>
+</html>
