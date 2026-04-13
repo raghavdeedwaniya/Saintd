@@ -22,7 +22,7 @@ function getNavHTML(activePage) {
 
   return `
 <nav>
-  <a class="nav-logo" href="index.html">
+  <a class="nav-logo" href="./index">
     <img src="${LOGO_IMG}" alt="Logo" onerror="this.style.display='none'">
     <div class="nav-logo-text">
       <strong>Saint "D" Public School</strong>
@@ -31,7 +31,7 @@ function getNavHTML(activePage) {
   </a>
   <ul class="nav-links">
     ${links}
-    <li><a href="contact.html" class="nav-cta">🎓 Admissions</a></li>
+    <li><a href="./contact" class="nav-cta">🎓 Admissions</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -39,7 +39,7 @@ function getNavHTML(activePage) {
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   ${mobileLinks}
-  <a href="contact.html" style="color:var(--gold);font-weight:900;">🎓 Apply for Admission</a>
+  <a href="./contact" style="color:var(--gold);font-weight:900;">🎓 Apply for Admission</a>
 </div>`;
 }
 
@@ -55,23 +55,23 @@ function getFooterHTML() {
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="academics.html">Academics</a></li>
-        <li><a href="results.html">Results 2026</a></li>
-        <li><a href="hostel.html">Hostel</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="./index">Home</a></li>
+        <li><a href="./about">About Us</a></li>
+        <li><a href="./academics">Academics</a></li>
+        <li><a href="./results">Results 2026</a></li>
+        <li><a href="./hostel">Hostel</a></li>
+        <li><a href="./gallery">Gallery</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Academics</h4>
       <ul>
-        <li><a href="academics.html">Play Group – KG</a></li>
-        <li><a href="academics.html">Class 1 – 5</a></li>
-        <li><a href="academics.html">Class 6 – 8</a></li>
-        <li><a href="academics.html">Class 9 – 10</a></li>
-        <li><a href="academics.html">Weekly Test Series</a></li>
-        <li><a href="contact.html">Admissions</a></li>
+        <li><a href="./academics">Play Group – KG</a></li>
+        <li><a href="./academics">Class 1 – 5</a></li>
+        <li><a href="./academics">Class 6 – 8</a></li>
+        <li><a href="./academics">Class 9 – 10</a></li>
+        <li><a href="./academics">Weekly Test Series</a></li>
+        <li><a href="./contact">Admissions</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -79,7 +79,7 @@ function getFooterHTML() {
       <div class="footer-contact-item"><span>📞</span><a href="tel:7665267777">7665267777</a></div>
       <div class="footer-contact-item"><span>✉️</span><a href="mailto:saintdschool1@gmail.com">saintdschool1@gmail.com</a></div>
       <div class="footer-contact-item"><span>📍</span><span>Near Govt. Hospital, Dhovani Nadi Road, Mandal, Rajasthan</span></div>
-      <div class="footer-contact-item"><span>🕐</span><span>Mon–Sat: 8 AM – 5 PM</span></div>
+      <div class="footer-contact-item"><span>🕐</span><span>Mon–Sat: 8 AM – 2 PM</span></div>
     </div>
   </div>
   <div class="footer-bottom">
@@ -95,7 +95,7 @@ function toggleMenu() {
 
 // Inject on load
 document.addEventListener('DOMContentLoaded', () => {
-  const page = window.location.pathname.split('/').pop() || 'index.html';
+  const page = window.location.pathname.split('/').pop() || './index';
   document.getElementById('navbar').innerHTML = getNavHTML(page);
   document.getElementById('footer').innerHTML = getFooterHTML();
 });
