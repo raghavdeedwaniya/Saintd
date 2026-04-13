@@ -22,7 +22,7 @@ function getNavHTML(activePage) {
 
   return `
 <nav>
-  <a class="nav-logo" href="./index">
+  <a class="nav-logo" href="./">
     <img src="${LOGO_IMG}" alt="Logo" onerror="this.style.display='none'">
     <div class="nav-logo-text">
       <strong>Saint "D" Public School</strong>
@@ -55,7 +55,7 @@ function getFooterHTML() {
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="./index">Home</a></li>
+        <li><a href="./">Home</a></li>
         <li><a href="./about">About Us</a></li>
         <li><a href="./academics">Academics</a></li>
         <li><a href="./results">Results 2026</a></li>
@@ -95,7 +95,7 @@ function toggleMenu() {
 
 // Inject on load
 document.addEventListener('DOMContentLoaded', () => {
-  const page = window.location.pathname.split('/').pop() || './index';
+  const page = window.location.pathname.split('/').pop() || './';
   document.getElementById('navbar').innerHTML = getNavHTML(page);
   document.getElementById('footer').innerHTML = getFooterHTML();
 });
