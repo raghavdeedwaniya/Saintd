@@ -5,13 +5,13 @@ const BUILDING_IMG = 'assets/building.jpg';
 
 function getNavHTML(activePage) {
   const pages = [
-    { href: 'index.html',      label: 'Home'      },
-    { href: 'about.html',      label: 'About'     },
-    { href: 'academics.html',  label: 'Academics' },
-    { href: 'results.html',    label: 'Results'   },
-    { href: 'hostel.html',     label: 'Hostel'    },
-    { href: 'gallery.html',    label: 'Gallery'   },
-    { href: 'contact.html',    label: 'Contact'   },
+    { href: './',      label: 'Hame'      },
+    { href: './about',      label: 'About'     },
+    { href: './academics',  label: 'Academics' },
+    { href: './results',    label: 'Results'   },
+    { href: './hostel',     label: 'Hostel'    },
+    { href: './gallery',    label: 'Gallery'   },
+    { href: './contact',    label: 'Contact'   },
   ];
   const links = pages.map(p =>
     `<li><a href="${p.href}" class="${p.href===activePage?'active':''}">${p.label}</a></li>`
