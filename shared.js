@@ -5,7 +5,7 @@ const BUILDING_IMG = 'assets/building.jpg';
 
 function getNavHTML(activePage) {
   const pages = [
-    { href: './',      label: 'Hame'      },
+    { href: './',      label: 'Home'      },
     { href: './about',      label: 'About'     },
     { href: './academics',  label: 'Academics' },
     { href: './results',    label: 'Results'   },
