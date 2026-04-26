@@ -4,13 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contact & Admissions — Saint "D" Public School</title>
+<meta name="description" content="Contact Saint D Public School for admissions, hostel enquiries, or any information. Call 7665267777 or fill out the admission enquiry form.">
 <link rel="stylesheet" href="style.css">
 <style>
 .contact-layout {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 4rem;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
   align-items: start;
@@ -18,19 +19,22 @@
 
 /* CONTACT INFO */
 .contact-info-card {
-  background: var(--navy);
-  border-radius: 22px;
+  background: var(--forest);
+  border-radius: 2.5rem;
   padding: 3rem 2.5rem;
-  color: white;
+  color: var(--cream);
   position: sticky;
   top: 90px;
+  box-shadow: 0 24px 60px var(--forest-shadow);
 }
 .contact-info-card h3 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Anton', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(230, 240, 250,0.12);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .ci-item {
   display: flex;
@@ -39,89 +43,94 @@
   margin-bottom: 1.8rem;
 }
 .ci-icon {
-  width: 46px; height: 46px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 12px;
+  width: 48px; height: 48px;
+  background: rgba(230, 240, 250,0.08);
+  border-radius: 1rem;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.3rem;
   flex-shrink: 0;
 }
-.ci-item h4 { font-size: 0.78rem; font-weight: 800; color: var(--sky); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
-.ci-item p, .ci-item a { color: #d0d8f0; font-size: 0.95rem; text-decoration: none; line-height: 1.5; }
-.ci-item a:hover { color: var(--gold); }
+.ci-item h4 { font-size: 10px; font-weight: 700; color: var(--sage); text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 0.3rem; }
+.ci-item p, .ci-item a { color: var(--moss); font-size: 0.95rem; text-decoration: none; line-height: 1.5; }
+.ci-item a:hover { color: var(--cream); }
 
 .social-links {
   display: flex;
   gap: 0.8rem;
   margin-top: 2rem;
   padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.1);
+  border-top: 1px solid rgba(230, 240, 250,0.12);
 }
 .social-btn {
-  background: rgba(255,255,255,0.08);
-  color: white;
-  padding: 10px 18px;
-  border-radius: 10px;
+  background: rgba(230, 240, 250,0.06);
+  color: var(--sage);
+  padding: 12px 20px;
+  border-radius: 50px;
   text-decoration: none;
-  font-size: 0.82rem;
+  font-size: 10px;
   font-weight: 700;
-  transition: background 0.2s;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: all 0.3s var(--ease-premium);
   display: flex; align-items: center; gap: 6px;
 }
-.social-btn:hover { background: rgba(255,255,255,0.15); }
+.social-btn:hover { background: rgba(230, 240, 250,0.15); }
 
 /* ADMISSION FORM */
 .admission-form-card {
-  background: white;
-  border-radius: 22px;
+  background: var(--cream);
+  border-radius: 2.5rem;
   padding: 3rem;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.1);
-  border-top: 5px solid var(--royal);
+  box-shadow: 0 12px 50px var(--forest-shadow);
+  border: 1px solid rgba(10, 37, 64,0.06);
 }
 .admission-form-card h3 {
-  font-family: 'Playfair Display', serif;
-  color: var(--navy);
+  font-family: 'Anton', sans-serif;
+  color: var(--forest);
   font-size: 1.5rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 .admission-form-card .form-desc {
-  color: var(--gray);
+  color: var(--forest);
+  opacity: 0.5;
   font-size: 0.9rem;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--olive);
 }
 .form-group {
   margin-bottom: 1.2rem;
 }
 .form-group label {
   display: block;
-  font-size: 0.8rem;
-  font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 0.4rem;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.2em;
 }
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  border: 2px solid var(--border);
-  background: var(--pale);
-  color: var(--text);
-  padding: 11px 14px;
-  border-radius: 10px;
+  border: 2px solid var(--olive);
+  background: var(--olive);
+  color: var(--forest);
+  padding: 13px 16px;
+  border-radius: 1rem;
   font-size: 0.92rem;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Inter', sans-serif;
   outline: none;
-  transition: border-color 0.2s, background 0.2s;
+  transition: all 0.3s var(--ease-premium);
 }
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-  border-color: var(--royal);
-  background: white;
+  border-color: var(--forest);
+  background: var(--cream);
 }
 .form-row-2 {
   display: grid;
@@ -129,47 +138,45 @@
   gap: 1rem;
 }
 .req-note {
-  font-size: 0.78rem;
-  color: var(--red);
+  font-size: 10px;
+  color: var(--moss);
   margin-bottom: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 .form-success-box {
   display: none;
-  background: #e8fef0;
-  border: 2px solid #22c55e;
-  border-radius: 14px;
+  background: var(--olive);
+  border: 2px solid var(--moss);
+  border-radius: 2rem;
   padding: 1.5rem;
   text-align: center;
   margin-top: 1.5rem;
 }
-.form-success-box h4 { color: #15803d; font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
-.form-success-box p { color: #166534; font-size: 0.9rem; }
+.form-success-box h4 { color: var(--forest); font-family: 'Anton', sans-serif; font-size: 1.2rem; margin-bottom: 0.5rem; text-transform: uppercase; }
+.form-success-box p { color: var(--forest); opacity: 0.7; font-size: 0.9rem; }
 
 /* MAP AREA */
 .map-section {
-  background: var(--light);
-  padding: 4rem 2rem;
+  background: var(--olive);
+  padding: 5rem 2rem;
+  border-radius: 5rem 5rem 0 0;
 }
 .map-inner {
   max-width: 1200px;
   margin: 0 auto;
 }
 .map-box {
-  background: linear-gradient(135deg, #e8eeff, #d4dcff);
-  border-radius: 20px;
+  border-radius: 2.5rem;
   min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  border: 2px dashed #9aaef0;
-  padding: 3rem;
+  overflow: hidden;
   margin-top: 2rem;
-  /* filter: invert(100%); */
+  box-shadow: 0 12px 40px var(--forest-shadow);
 }
-.map-box .map-ico { font-size: 4rem; margin-bottom: 1rem; }
-.map-box h3 { color: var(--navy); font-weight: 800; font-size: 1.2rem; margin-bottom: 0.5rem; }
-.map-box p { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; line-height: 1.6; }
+.map-box iframe {
+  border-radius: 2.5rem;
+}
 
 /* QUICK CONTACT CHIPS */
 .quick-contacts {
@@ -181,18 +188,19 @@
 .qc-chip {
   display: flex;
   align-items: center;
-  gap: 8px;
-  background: white;
-  border: 2px solid var(--border);
-  border-radius: 12px;
-  padding: 12px 18px;
+  gap: 10px;
+  background: var(--cream);
+  border: 2px solid var(--olive);
+  border-radius: 2rem;
+  padding: 14px 22px;
   text-decoration: none;
-  transition: border-color 0.2s, transform 0.2s;
+  transition: all 0.4s var(--ease-premium);
+  box-shadow: 0 8px 25px var(--forest-shadow);
 }
-.qc-chip:hover { border-color: var(--royal); transform: translateY(-2px); }
+.qc-chip:hover { border-color: var(--forest); transform: translateY(-4px); }
 .qc-chip span:first-child { font-size: 1.3rem; }
-.qc-chip div strong { display: block; color: var(--navy); font-size: 0.88rem; }
-.qc-chip div span { color: var(--gray); font-size: 0.78rem; }
+.qc-chip div strong { display: block; color: var(--forest); font-size: 0.88rem; }
+.qc-chip div span { color: var(--moss); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 
 @media (max-width: 900px) {
   .contact-layout { grid-template-columns: 1fr; }
@@ -206,15 +214,15 @@
 
 <div class="page-hero">
   <div class="page-hero-label">Get In Touch</div>
-  <h1>Contact & Admissions</h1>
+  <h1>Contact</h1>
   <p>Ready to join the Saint "D" family? Reach out for admissions, hostel enquiries, or any information about our school.</p>
 </div>
 
 <!-- QUICK CONTACT -->
 <div style="max-width:1200px;margin:3rem auto;padding:0 2rem;">
-  <div class="section-label">Quick Contact</div>
-  <div class="section-title" style="margin-bottom:1.5rem;">Reach Us Directly</div>
-  <div class="quick-contacts">
+  <div class="section-label reveal">Quick Contact</div>
+  <div class="section-title reveal" style="margin-bottom:1.5rem;">Reach Us Directly</div>
+  <div class="quick-contacts reveal">
     <a href="tel:7665267777" class="qc-chip">
       <span>📞</span>
       <div><strong>7665267777</strong><span>Call us now</span></div>
@@ -229,7 +237,7 @@
     </div>
     <div class="qc-chip">
       <span>🕐</span>
-      <div><strong>Mon – Sat</strong><span>8:00 AM – 2:00 PM</span></div>
+      <div><strong>Mon – Sat</strong><span>8:00 AM – 5:00 PM</span></div>
     </div>
   </div>
 </div>
@@ -238,8 +246,8 @@
 <div class="contact-layout">
 
   <!-- LEFT: CONTACT INFO -->
-  <div class="contact-info-card">
-    <h3>📌 School Information</h3>
+  <div class="contact-info-card reveal">
+    <h3>School Information</h3>
     <div class="ci-item">
       <div class="ci-icon">📞</div>
       <div>
@@ -265,7 +273,7 @@
       <div class="ci-icon">🕐</div>
       <div>
         <h4>Office Hours</h4>
-        <p>Monday – Saturday<br>8:00 AM – 2:00 PM</p>
+        <p>Monday – Saturday<br>8:00 AM – 5:00 PM</p>
       </div>
     </div>
     <div class="ci-item">
@@ -282,8 +290,8 @@
   </div>
 
   <!-- RIGHT: ADMISSION FORM -->
-  <div class="admission-form-card">
-    <h3>🎓 Admission Enquiry Form</h3>
+  <div class="admission-form-card reveal">
+    <h3>Admission Enquiry Form</h3>
     <p class="form-desc">Fill in the details below and our team will get back to you within 24 hours. Fields marked * are required.</p>
     <p class="req-note">* Required fields</p>
 
@@ -357,7 +365,7 @@
         <label>Message / Questions</label>
         <textarea name="message" rows="3" placeholder="Any questions, previous school details, or special requirements..." id="f-msg"></textarea>
       </div>
-      <button type="submit" class="btn btn-navy" style="width:100%;text-align:center;display:block;font-size:1rem;">
+      <button type="submit" class="btn btn-forest" style="width:100%;text-align:center;display:block;font-size:11px;letter-spacing:0.2em;">
         📩 Submit Admission Enquiry
       </button>
       <div class="form-success-box" id="f-success">
@@ -372,10 +380,10 @@
 <!-- MAP -->
 <div class="map-section">
   <div class="map-inner">
-    <div class="section-label">Find Us</div>
-    <div class="section-title">Our Location</div>
-    <div class="map-box">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.0003593061474!2d74.57512417621365!3d25.438251521893292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3968e799cac704bf%3A0xdc9a53c9f938583!2sSaint%20%22D%22%20Public%20Senior%20Sec.%20School!5e0!3m2!1sen!2sin!4v1776107185254!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
+    <div class="section-label reveal">Find Us</div>
+    <div class="section-title reveal">Our Location</div>
+    <div class="map-box reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3603.0003593061474!2d74.57512417621365!3d25.438251521893292!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3968e799cac704bf%3A0xdc9a53c9f938583!2sSaint%20%22D%22%20Public%20Senior%20Sec.%20School!5e0!3m2!1sen!2sin!4v1776107185254!5m2!1sen!2sin" width="100%" height="350" style="border:0;border-radius:2.5rem;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" ></iframe>
     </div>
   </div>    
 </div>

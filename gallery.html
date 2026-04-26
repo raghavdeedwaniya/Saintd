@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gallery — Saint "D" Public School</title>
+<meta name="description" content="Photo gallery of Saint D Public School — campus, classrooms, events, sports, hostel and more.">
 <link rel="stylesheet" href="style.css">
 <style>
 .gallery-controls {
@@ -14,60 +15,62 @@
   align-items: center;
 }
 .filter-btn {
-  background: var(--light);
-  color: var(--navy);
+  background: var(--olive);
+  color: var(--forest);
   border: 2px solid transparent;
-  padding: 8px 20px;
-  border-radius: 30px;
+  padding: 10px 22px;
+  border-radius: 50px;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 10px;
   cursor: pointer;
-  transition: all 0.2s;
-  font-family: 'Nunito', sans-serif;
+  transition: all 0.4s var(--ease-premium);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
 }
 .filter-btn:hover, .filter-btn.active {
-  background: var(--navy);
-  color: white;
+  background: var(--forest);
+  color: var(--cream);
 }
 
 /* Upload zone */
 .upload-zone {
-  border: 3px dashed var(--royal);
-  border-radius: 18px;
+  border: 3px dashed var(--moss);
+  border-radius: 2.5rem;
   padding: 3rem 2rem;
   text-align: center;
-  background: var(--light);
+  background: var(--olive);
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.4s var(--ease-premium);
   margin-bottom: 3rem;
   position: relative;
 }
-.upload-zone:hover { border-color: var(--navy); background: #e4e9ff; }
+.upload-zone:hover { border-color: var(--forest); background: var(--sage); }
 .upload-zone input[type="file"] {
   position: absolute; inset: 0;
   opacity: 0; cursor: pointer; z-index: 5;
 }
 .upload-zone .uz-icon { font-size: 3rem; margin-bottom: 1rem; }
-.upload-zone h3 { color: var(--navy); font-weight: 800; margin-bottom: 0.4rem; }
-.upload-zone p { color: var(--gray); font-size: 0.88rem; }
+.upload-zone h3 { color: var(--forest); font-weight: 700; margin-bottom: 0.4rem; }
+.upload-zone p { color: var(--forest); opacity: 0.5; font-size: 0.85rem; }
 
 /* Masonry-style gallery */
 .gallery-grid {
   columns: 3;
-  column-gap: 1.2rem;
-  gap: 1.2rem;
+  column-gap: 1.5rem;
+  gap: 1.5rem;
 }
 .gallery-item {
   break-inside: avoid;
-  margin-bottom: 1.2rem;
-  border-radius: 14px;
+  margin-bottom: 1.5rem;
+  border-radius: 2.5rem;
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 12px 40px var(--forest-shadow);
+  transition: all 0.5s var(--ease-premium);
 }
-.gallery-item:hover { transform: scale(1.02); box-shadow: 0 10px 30px rgba(0,0,0,0.18); }
+.gallery-item:hover { transform: scale(1.02); box-shadow: 0 20px 50px rgba(10, 37, 64,0.25); }
 .gallery-item img {
   width: 100%; height: auto;
   display: block;
@@ -75,27 +78,30 @@
 }
 .gallery-item .gi-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(18,23,94,0.8) 0%, transparent 50%);
+  background: rgba(10, 37, 64, 0.3);
+  backdrop-filter: blur(2px);
   opacity: 0;
-  transition: opacity 0.2s;
+  transition: opacity 0.4s var(--ease-premium);
   display: flex;
   align-items: flex-end;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 .gallery-item:hover .gi-overlay { opacity: 1; }
 .gi-overlay span {
-  color: white;
+  color: var(--cream);
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 .gi-delete {
   position: absolute;
-  top: 8px; right: 8px;
-  background: rgba(192,49,43,0.85);
-  color: white;
+  top: 12px; right: 12px;
+  background: rgba(10, 37, 64,0.8);
+  color: var(--cream);
   border: none;
   border-radius: 50%;
-  width: 28px; height: 28px;
+  width: 32px; height: 32px;
   font-size: 0.8rem;
   cursor: pointer;
   display: none;
@@ -108,15 +114,15 @@
 /* Category tags */
 .cat-tag {
   position: absolute;
-  top: 8px; left: 8px;
-  background: rgba(18,23,94,0.75);
-  color: white;
-  font-size: 0.65rem;
-  font-weight: 800;
-  padding: 3px 10px;
-  border-radius: 20px;
+  top: 12px; left: 12px;
+  background: rgba(10, 37, 64, 0.7);
+  color: var(--cream);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 50px;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.15em;
   backdrop-filter: blur(4px);
 }
 
@@ -124,7 +130,7 @@
 .lightbox {
   display: none;
   position: fixed; inset: 0;
-  background: rgba(0,0,0,0.92);
+  background: rgba(10, 37, 64, 0.95);
   z-index: 1000;
   align-items: center;
   justify-content: center;
@@ -134,39 +140,41 @@
 .lightbox img {
   max-width: 90vw;
   max-height: 85vh;
-  border-radius: 12px;
+  border-radius: 2rem;
   object-fit: contain;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4);
 }
 .lb-close {
   position: absolute;
   top: 1.5rem; right: 1.5rem;
-  background: rgba(255,255,255,0.15);
-  color: white;
+  background: rgba(230, 240, 250,0.15);
+  color: var(--cream);
   border: none;
   border-radius: 50%;
-  width: 44px; height: 44px;
+  width: 48px; height: 48px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.3s var(--ease-premium);
 }
-.lb-close:hover { background: var(--red); }
+.lb-close:hover { background: rgba(230, 240, 250,0.3); }
 .lb-caption {
   position: absolute;
   bottom: 2rem;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(18,23,94,0.8);
-  color: white;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 0.88rem;
+  background: rgba(10, 37, 64,0.8);
+  color: var(--cream);
+  padding: 10px 24px;
+  border-radius: 50px;
+  font-size: 10px;
   font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
   backdrop-filter: blur(6px);
   white-space: nowrap;
 }
 
-/* Upload category picker */
+/* Category picker */
 .category-picker {
   display: flex;
   gap: 0.5rem;
@@ -175,28 +183,31 @@
   margin-top: 1rem;
 }
 .cat-pick-btn {
-  background: white;
-  border: 2px solid var(--border);
-  color: var(--navy);
-  padding: 5px 14px;
-  border-radius: 20px;
-  font-size: 0.78rem;
+  background: var(--cream);
+  border: 2px solid var(--olive);
+  color: var(--forest);
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 10px;
   font-weight: 700;
   cursor: pointer;
-  font-family: 'Nunito', sans-serif;
-  transition: all 0.15s;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s var(--ease-premium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
 }
 .cat-pick-btn:hover, .cat-pick-btn.selected {
-  background: var(--navy); color: white; border-color: var(--navy);
+  background: var(--forest); color: var(--cream); border-color: var(--forest);
 }
 
 .empty-state {
   text-align: center;
-  padding: 4rem 2rem;
-  color: var(--gray);
+  padding: 5rem 2rem;
+  color: var(--forest);
+  opacity: 0.5;
 }
 .empty-state .es-icon { font-size: 4rem; margin-bottom: 1rem; }
-.empty-state h3 { color: var(--navy); margin-bottom: 0.5rem; }
+.empty-state h3 { color: var(--forest); margin-bottom: 0.5rem; }
 
 @media (max-width: 768px) {
   .gallery-grid { columns: 2; }
@@ -211,35 +222,13 @@
 
 <div class="page-hero">
   <div class="page-hero-label">School Life</div>
-  <h1>Photo Gallery</h1>
+  <h1>Gallery</h1>
   <p>Explore moments from our campus — classrooms, events, sports, hostel and more. Upload your own photos below!</p>
 </div>
 
 <div class="section">
-  <!-- UPLOAD ZONE -->
-  <!-- <div class="section-label">Add Photos</div>
-  <div class="section-title" style="margin-bottom:0.5rem">Upload School Photos</div>
-  <p style="color:var(--gray);margin-bottom:1rem;font-size:0.9rem;">Select a category first, then click the box to upload one or multiple photos.</p>
-  
-  <div class="category-picker" id="catPicker">
-    <button class="cat-pick-btn selected" data-cat="Campus">🏫 Campus</button>
-    <button class="cat-pick-btn" data-cat="Classroom">📚 Classroom</button>
-    <button class="cat-pick-btn" data-cat="Events">🎉 Events</button>
-    <button class="cat-pick-btn" data-cat="Sports">⚽ Sports</button>
-    <button class="cat-pick-btn" data-cat="Hostel">🏠 Hostel</button>
-    <button class="cat-pick-btn" data-cat="Results">🏆 Results</button>
-    <button class="cat-pick-btn" data-cat="Other">📷 Other</button>
-  </div>
-  <br>
-  <div class="upload-zone" id="uploadZone">
-    <input type="file" accept="image/*" multiple onchange="handleUpload(this)">
-    <div class="uz-icon">📸</div>
-    <h3>Click to Upload Photos</h3>
-    <p>Supports JPG, PNG, WEBP • Multiple files allowed</p>
-  </div> -->
-
   <!-- FILTER -->
-  <div class="gallery-controls" id="filterRow">
+  <div class="gallery-controls reveal" id="filterRow">
     <button class="filter-btn active" onclick="filterGallery('all',this)">All Photos</button>
     <button class="filter-btn" onclick="filterGallery('Campus',this)">🏫 Campus</button>
     <button class="filter-btn" onclick="filterGallery('Classroom',this)">📚 Classroom</button>
@@ -312,7 +301,6 @@ function handleUpload(input) {
 
 function savePhotos() {
   try { localStorage.setItem('gallery-photos', JSON.stringify(photos)); } catch(e) {
-    // If storage full, remove oldest
     if (photos.length > 1) { photos.shift(); savePhotos(); }
   }
 }

@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hostel — Saint "D" Public School</title>
+<meta name="description" content="AC hostel facilities at Saint D Public School — 24/7 CCTV, nutritious meals, dedicated study hours, and a safe home away from home.">
 <link rel="stylesheet" href="style.css">
 <style>
 .hostel-intro {
@@ -11,89 +12,93 @@
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
   align-items: center;
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 .hostel-visual {
-  background: linear-gradient(135deg, var(--navy), var(--royal));
-  border-radius: 24px;
-  padding: 3rem;
+  background: var(--forest);
+  border-radius: 3rem;
+  padding: 3.5rem;
   text-align: center;
-  box-shadow: 0 20px 50px rgba(18,23,94,0.25);
+  box-shadow: 0 24px 60px var(--forest-shadow);
 }
-.hostel-visual .big-icon { font-size: 6rem; margin-bottom: 1.5rem; }
+.hostel-visual .big-icon { font-size: 5rem; margin-bottom: 1.5rem; }
 .hostel-visual h3 {
-  font-family: 'Playfair Display', serif;
-  color: white; font-size: 1.6rem; margin-bottom: 0.7rem;
+  font-family: 'Anton', sans-serif;
+  color: var(--cream); font-size: 1.8rem; margin-bottom: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
-.hostel-visual p { color: #b0bdf0; font-size: 0.92rem; line-height: 1.7; }
+.hostel-visual p { color: var(--sage); font-size: 0.9rem; line-height: 1.7; }
 
 .hostel-list { list-style: none; }
 .hostel-list li {
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  padding: 1rem 0;
-  border-bottom: 1px solid var(--border);
+  padding: 1.2rem 0;
+  border-bottom: 1px solid var(--olive);
 }
 .hostel-list li:last-child { border-bottom: none; }
 .hl-icon {
-  width: 42px; height: 42px;
-  background: var(--light);
-  border-radius: 10px;
+  width: 46px; height: 46px;
+  background: var(--olive);
+  border-radius: 1rem;
   display: flex; align-items: center; justify-content: center;
   font-size: 1.3rem;
   flex-shrink: 0;
 }
-.hostel-list li h4 { font-weight: 800; color: var(--navy); margin-bottom: 0.2rem; font-size: 0.95rem; }
-.hostel-list li p { color: var(--gray); font-size: 0.85rem; line-height: 1.5; }
+.hostel-list li h4 { font-weight: 700; color: var(--forest); margin-bottom: 0.2rem; font-size: 0.95rem; }
+.hostel-list li p { color: var(--forest); opacity: 0.6; font-size: 0.85rem; line-height: 1.6; }
 
 /* AMENITIES GRID */
 .amenities-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 .amenity-card {
-  background: white;
-  border-radius: 16px;
-  padding: 1.8rem 1.2rem;
+  background: var(--cream);
+  border-radius: 2.5rem;
+  padding: 2rem 1.5rem;
   text-align: center;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.07);
-  border-bottom: 3px solid var(--royal);
-  transition: transform 0.2s;
+  box-shadow: 0 12px 40px var(--forest-shadow);
+  transition: all 0.5s var(--ease-premium);
+  border: 1px solid rgba(10, 37, 64,0.06);
 }
-.amenity-card:hover { transform: translateY(-4px); }
+.amenity-card:hover { transform: translateY(-6px); }
 .am-icon { font-size: 2.4rem; margin-bottom: 0.8rem; }
-.amenity-card h4 { font-weight: 800; color: var(--navy); font-size: 0.92rem; margin-bottom: 0.3rem; }
-.amenity-card p { color: var(--gray); font-size: 0.8rem; line-height: 1.5; }
+.amenity-card h4 { font-weight: 700; color: var(--forest); font-size: 0.92rem; margin-bottom: 0.3rem; }
+.amenity-card p { color: var(--forest); opacity: 0.6; font-size: 0.82rem; line-height: 1.6; }
 
 /* SAFETY */
 .safety-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 .safety-card {
-  background: var(--light);
-  border-radius: 16px;
+  background: var(--cream);
+  border-radius: 2.5rem;
   padding: 2rem;
   display: flex;
   gap: 1.2rem;
   align-items: flex-start;
-  border-left: 4px solid var(--royal);
-  transition: transform 0.2s;
+  box-shadow: 0 8px 30px var(--forest-shadow);
+  transition: all 0.5s var(--ease-premium);
+  border: 1px solid rgba(10, 37, 64,0.06);
 }
-.safety-card:hover { transform: translateX(4px); }
+.safety-card:hover { transform: translateX(6px); }
 .safety-card .s-icon { font-size: 2rem; flex-shrink: 0; }
-.safety-card h4 { font-weight: 800; color: var(--navy); margin-bottom: 0.3rem; }
-.safety-card p { color: var(--gray); font-size: 0.87rem; line-height: 1.6; }
+.safety-card h4 { font-weight: 700; color: var(--forest); margin-bottom: 0.3rem; }
+.safety-card p { color: var(--forest); opacity: 0.6; font-size: 0.87rem; line-height: 1.6; }
 
 /* ENQUIRY FORM */
 .enquiry-section {
-  background: linear-gradient(135deg, var(--navy), var(--royal));
-  padding: 5rem 2rem;
+  background: var(--forest);
+  padding: 6rem 2rem;
+  border-radius: 5rem 5rem 0 0;
 }
 .enquiry-inner {
   max-width: 700px;
@@ -101,15 +106,16 @@
   text-align: center;
 }
 .enquiry-inner h2 {
-  font-family: 'Playfair Display', serif;
-  color: white; font-size: 2rem; margin-bottom: 0.7rem;
+  font-family: 'Anton', sans-serif;
+  color: var(--cream); font-size: 2.5rem; margin-bottom: 0.8rem;
+  text-transform: uppercase; letter-spacing: 0.05em;
 }
-.enquiry-inner p { color: #b0bdf0; margin-bottom: 2.5rem; }
+.enquiry-inner p { color: var(--sage); margin-bottom: 2.5rem; }
 .eq-form {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 18px;
-  padding: 2.5rem;
+  background: rgba(230, 240, 250,0.06);
+  border: 1px solid rgba(230, 240, 250,0.12);
+  border-radius: 2.5rem;
+  padding: 3rem;
   backdrop-filter: blur(10px);
   text-align: left;
 }
@@ -122,41 +128,41 @@
 .form-group { margin-bottom: 1rem; }
 .form-group label {
   display: block;
-  color: #b0bdf0;
-  font-size: 0.82rem;
+  color: var(--sage);
+  font-size: 10px;
   font-weight: 700;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.2em;
 }
 .form-group input,
 .form-group select,
 .form-group textarea {
   width: 100%;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  padding: 10px 14px;
-  border-radius: 8px;
+  background: rgba(230, 240, 250,0.08);
+  border: 1px solid rgba(230, 240, 250,0.2);
+  color: var(--cream);
+  padding: 12px 16px;
+  border-radius: 1rem;
   font-size: 0.92rem;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Inter', sans-serif;
   outline: none;
-  transition: border-color 0.2s;
+  transition: border-color 0.3s var(--ease-premium);
 }
 .form-group input::placeholder,
-.form-group textarea::placeholder { color: rgba(255,255,255,0.4); }
+.form-group textarea::placeholder { color: rgba(230, 240, 250,0.4); }
 .form-group input:focus,
 .form-group select:focus,
-.form-group textarea:focus { border-color: var(--gold); }
-.form-group select option { background: var(--navy); color: white; }
+.form-group textarea:focus { border-color: var(--sage); }
+.form-group select option { background: var(--forest); color: var(--cream); }
 .form-success {
   display: none;
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.3);
-  border-radius: 12px;
+  background: rgba(230, 240, 250,0.1);
+  border: 1px solid rgba(230, 240, 250,0.25);
+  border-radius: 1.5rem;
   padding: 1.5rem;
   text-align: center;
-  color: white;
+  color: var(--cream);
   margin-top: 1rem;
 }
 
@@ -171,16 +177,16 @@
 
 <div class="page-hero">
   <div class="page-hero-label">Student Accommodation</div>
-  <h1>Hostel Facilities</h1>
+  <h1>Hostel</h1>
   <p>A safe, comfortable, and nurturing home away from home — for students from outside Mandal.</p>
 </div>
 
 <!-- INTRO -->
 <div class="hostel-intro">
-  <div>
+  <div class="reveal">
     <div class="section-label">Our Hostel</div>
     <div class="section-title">Where Students Thrive</div>
-    <p style="color:var(--gray);margin-bottom:2rem;line-height:1.8;font-size:0.97rem;">Saint "D" Public School offers modern hostel facilities for students coming from villages and cities outside Mandal. Our hostel is designed to give students the best environment to focus on studies while staying comfortable and safe.</p>
+    <p style="color:var(--forest);opacity:0.6;margin-bottom:2rem;line-height:1.8;font-size:0.95rem;">Saint "D" Public School offers modern hostel facilities for students coming from villages and cities outside Mandal. Our hostel is designed to give students the best environment to focus on studies while staying comfortable and safe.</p>
     <ul class="hostel-list">
       <li>
         <div class="hl-icon">❄️</div>
@@ -204,63 +210,65 @@
       </li>
     </ul>
   </div>
-  <div class="hostel-visual">
+  <div class="hostel-visual reveal">
     <div class="big-icon">🏠</div>
     <h3>A Home Away From Home</h3>
     <p>Our hostel provides students with the discipline, routine, and comfort they need to excel academically while staying safe and healthy throughout the school year.</p>
     <br>
-    <a href="tel:7665267777" class="btn btn-gold" style="margin-top:1rem;">📞 Call for Hostel Enquiry</a>
+    <a href="tel:7665267777" class="btn btn-white" style="margin-top:1rem;">📞 Call for Hostel Enquiry</a>
   </div>
 </div>
 
 <!-- AMENITIES -->
-<div class="bg-light">
+<div class="bg-olive">
   <div class="section">
-    <div class="section-label">What We Provide</div>
-    <div class="section-title">Hostel Amenities</div>
-    <div class="section-subtitle">Everything a student needs for a comfortable and productive stay.</div>
+    <div class="section-label reveal">What We Provide</div>
+    <div class="section-title reveal">Hostel Amenities</div>
+    <div class="section-subtitle reveal">Everything a student needs for a comfortable and productive stay.</div>
     <div class="amenities-grid">
-      <div class="amenity-card"><div class="am-icon">❄️</div><h4>AC Rooms</h4><p>Air-conditioned rooms for comfort in every season.</p></div>
-      <div class="amenity-card"><div class="am-icon">🛏️</div><h4>Clean Beds</h4><p>Fresh bedding changed regularly. Hygienic room maintenance.</p></div>
-      <div class="amenity-card"><div class="am-icon">🍱</div><h4>3 Meals Daily</h4><p>Nutritious breakfast, lunch and dinner every day.</p></div>
-      <div class="amenity-card"><div class="am-icon">💡</div><h4>24/7 Electricity</h4><p>Uninterrupted power supply with backup generator.</p></div>
-      <div class="amenity-card"><div class="am-icon">🚿</div><h4>Clean Bathrooms</h4><p>Well-maintained washrooms with hot and cold water.</p></div>
-      <div class="amenity-card"><div class="am-icon">📖</div><h4>Study Room</h4><p>Quiet, well-lit study hall for evening study sessions.</p></div>
-      <div class="amenity-card"><div class="am-icon">📞</div><h4>Parent Communication</h4><p>Regular updates to parents about student progress.</p></div>
-      <div class="amenity-card"><div class="am-icon">🏃</div><h4>Recreation Time</h4><p>Scheduled outdoor play and recreation periods daily.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">❄️</div><h4>AC Rooms</h4><p>Air-conditioned rooms for comfort in every season.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">🛏️</div><h4>Clean Beds</h4><p>Fresh bedding changed regularly. Hygienic room maintenance.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">🍱</div><h4>3 Meals Daily</h4><p>Nutritious breakfast, lunch and dinner every day.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">💡</div><h4>24/7 Electricity</h4><p>Uninterrupted power supply with backup generator.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">🚿</div><h4>Clean Bathrooms</h4><p>Well-maintained washrooms with hot and cold water.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">📖</div><h4>Study Room</h4><p>Quiet, well-lit study hall for evening study sessions.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">📞</div><h4>Parent Communication</h4><p>Regular updates to parents about student progress.</p></div>
+      <div class="amenity-card reveal"><div class="am-icon">🏃</div><h4>Recreation Time</h4><p>Scheduled outdoor play and recreation periods daily.</p></div>
     </div>
   </div>
 </div>
 
 <!-- SAFETY -->
 <div class="section">
-  <div class="section-label">Student Safety</div>
-  <div class="section-title">Safety & Security Measures</div>
-  <div class="section-subtitle">We take the safety of our hostel students extremely seriously. Here is how we keep them protected.</div>
+  <div class="section-label reveal">Student Safety</div>
+  <div class="section-title reveal">Safety & Security Measures</div>
+  <div class="section-subtitle reveal">We take the safety of our hostel students extremely seriously. Here is how we keep them protected.</div>
   <div class="safety-grid">
-    <div class="safety-card"><div class="s-icon">📹</div><div><h4>24/7 CCTV Cameras</h4><p>High-resolution cameras installed throughout the hostel premises for continuous monitoring.</p></div></div>
-    <div class="safety-card"><div class="s-icon">🚪</div><div><h4>Controlled Entry/Exit</h4><p>Strict entry and exit protocols. Only authorized persons allowed inside the hostel premises.</p></div></div>
-    <div class="safety-card"><div class="s-icon">👨‍⚕️</div><div><h4>Medical Proximity</h4><p>Located right next to the Government Hospital. Medical help is always just a minute away.</p></div></div>
-    <div class="safety-card"><div class="s-icon">👩‍🏫</div><div><h4>Resident Warden</h4><p>Dedicated wardens on duty at all times to supervise and support students.</p></div></div>
-    <div class="safety-card"><div class="s-icon">📱</div><div><h4>Regular Parent Updates</h4><p>Parents are regularly informed about their child's health, discipline, and academic progress.</p></div></div>
-    <div class="safety-card"><div class="s-icon">🔒</div><div><h4>Secure Premises</h4><p>Fully secured and gated compound with night guards on duty.</p></div></div>
+    <div class="safety-card reveal"><div class="s-icon">📹</div><div><h4>24/7 CCTV Cameras</h4><p>High-resolution cameras installed throughout the hostel premises for continuous monitoring.</p></div></div>
+    <div class="safety-card reveal"><div class="s-icon">🚪</div><div><h4>Controlled Entry/Exit</h4><p>Strict entry and exit protocols. Only authorized persons allowed inside the hostel premises.</p></div></div>
+    <div class="safety-card reveal"><div class="s-icon">👨‍⚕️</div><div><h4>Medical Proximity</h4><p>Located right next to the Government Hospital. Medical help is always just a minute away.</p></div></div>
+    <div class="safety-card reveal"><div class="s-icon">👩‍🏫</div><div><h4>Resident Warden</h4><p>Dedicated wardens on duty at all times to supervise and support students.</p></div></div>
+    <div class="safety-card reveal"><div class="s-icon">📱</div><div><h4>Regular Parent Updates</h4><p>Parents are regularly informed about their child's health, discipline, and academic progress.</p></div></div>
+    <div class="safety-card reveal"><div class="s-icon">🔒</div><div><h4>Secure Premises</h4><p>Fully secured and gated compound with night guards on duty.</p></div></div>
   </div>
 </div>
 
 <!-- ENQUIRY FORM -->
 <div class="enquiry-section">
-  <div class="enquiry-inner">
+  <div class="enquiry-inner reveal">
     <h2>Hostel Admission Enquiry</h2>
     <p>Interested in hostel admission for your child? Fill in the form below and we'll get back to you.</p>
-    <div class="eq-form">
+    <form class="eq-form" id="hostel-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="3b53f0ca-0016-40fe-af2e-1450506d5917">
+      <input type="hidden" name="subject" value="Hostel Enquiry — Saint D Public School">
       <div class="form-row">
         <div class="form-group">
-          <label>Student Name</label>
-          <input type="text" placeholder="Full name" id="hf-name">
+          <label>Student Name *</label>
+          <input type="text" name="name" placeholder="Full name" id="hf-name" required>
         </div>
         <div class="form-group">
-          <label>Class</label>
-          <select id="hf-class">
+          <label>Class *</label>
+          <select name="class_applied" id="hf-class" required>
             <option value="">Select Class</option>
             <option>Class 6</option><option>Class 7</option><option>Class 8</option>
             <option>Class 9</option><option>Class 10</option>
@@ -270,47 +278,81 @@
       <div class="form-row">
         <div class="form-group">
           <label>Parent Name</label>
-          <input type="text" placeholder="Parent / guardian name" id="hf-parent">
+          <input type="text" name="parent_name" placeholder="Parent / guardian name" id="hf-parent">
         </div>
         <div class="form-group">
-          <label>Mobile Number</label>
-          <input type="tel" placeholder="10-digit mobile number" id="hf-phone">
+          <label>Mobile Number *</label>
+          <input type="tel" name="phone" placeholder="10-digit mobile number" id="hf-phone" required>
         </div>
       </div>
       <div class="form-group">
         <label>Your Village / City</label>
-        <input type="text" placeholder="Where are you coming from?" id="hf-city">
+        <input type="text" name="city" placeholder="Where are you coming from?" id="hf-city">
       </div>
       <div class="form-group">
         <label>Message (optional)</label>
-        <textarea rows="3" placeholder="Any questions or specific requirements..." id="hf-msg"></textarea>
+        <textarea name="message" rows="3" placeholder="Any questions or specific requirements..." id="hf-msg"></textarea>
       </div>
-      <button class="btn btn-gold" style="width:100%;justify-content:center;display:block;" onclick="submitHostelForm()">
+      <button type="submit" class="btn btn-white" id="hf-submit" style="width:100%;text-align:center;display:block;letter-spacing:0.15em;">
         📩 Submit Enquiry
       </button>
       <div class="form-success" id="hf-success">
-        ✅ <strong>Thank you!</strong> Your hostel enquiry has been noted. Please call us at <strong>7665267777</strong> for immediate assistance.
+        ✅ <strong>Thank you!</strong> Your hostel enquiry has been sent to us. We will contact you at the number provided shortly.<br>
+        For immediate help, call <strong>7665267777</strong>.
       </div>
-    </div>
+    </form>
   </div>
 </div>
 
 <div id="footer"></div>
 <script src="shared.js"></script>
 <script>
-function submitHostelForm() {
-  const name = document.getElementById('hf-name').value.trim();
-  const phone = document.getElementById('hf-phone').value.trim();
-  if (!name || !phone) {
-    alert('Please fill in the Student Name and Mobile Number at minimum.');
+const hostelForm = document.getElementById('hostel-form');
+const hostelSuccess = document.getElementById('hf-success');
+
+if (hostelForm) {
+  hostelForm.addEventListener('submit', submitHostelForm);
+}
+
+async function submitHostelForm(event) {
+  event.preventDefault();
+  const form = event.target;
+  const formData = new FormData(form);
+
+  const name = formData.get('name')?.toString().trim();
+  const phone = formData.get('phone')?.toString().trim();
+  const classApplied = formData.get('class_applied')?.toString().trim();
+
+  if (!name || !phone || !classApplied) {
+    alert('Please fill in Student Name, Class, and Mobile Number.');
     return;
   }
-  document.getElementById('hf-success').style.display = 'block';
-  ['hf-name','hf-class','hf-parent','hf-phone','hf-city','hf-msg'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el.tagName === 'SELECT') el.selectedIndex = 0;
-    else el.value = '';
-  });
+
+  const submitBtn = document.getElementById('hf-submit');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Sending...';
+
+  try {
+    const response = await fetch(form.action, {
+      method: 'POST',
+      body: formData
+    });
+
+    if (!response.ok) throw new Error('Submission failed. Please try again.');
+
+    const result = await response.json();
+    if (result.success !== true) throw new Error(result.message || 'Unable to submit enquiry.');
+
+    form.reset();
+    hostelSuccess.style.display = 'block';
+    hostelSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (error) {
+    alert(error.message || 'Form submission failed. Please try again later.');
+    console.error(error);
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.textContent = '📩 Submit Enquiry';
+  }
 }
 </script>
 </body>

@@ -4,125 +4,125 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Academics — Saint "D" Public School</title>
+<meta name="description" content="Explore academics at Saint D Public School — from Play Group to RBSE Class 10. Weekly test series, expert faculty, structured curriculum.">
 <link rel="stylesheet" href="style.css">
 <style>
 .classes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 .class-card {
-  background: white;
-  border-radius: 18px;
-  padding: 2rem 1.5rem;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-  border-top: 5px solid var(--royal);
-  transition: transform 0.2s, box-shadow 0.2s;
+  background: var(--cream);
+  border-radius: 2.5rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 12px 40px var(--forest-shadow);
+  transition: all 0.5s var(--ease-premium);
   text-align: center;
+  border: 1px solid rgba(10, 37, 64,0.06);
 }
-.class-card:nth-child(2) { border-top-color: var(--sky); }
-.class-card:nth-child(3) { border-top-color: var(--gold); }
-.class-card:nth-child(4) { border-top-color: var(--red); }
-.class-card:hover { transform: translateY(-5px); box-shadow: 0 14px 35px rgba(45,53,192,0.13); }
-.class-icon { font-size: 2.8rem; margin-bottom: 1rem; }
-.class-card h3 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.15rem; margin-bottom: 0.5rem; }
-.class-card p { color: var(--gray); font-size: 0.88rem; line-height: 1.6; }
+.class-card:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(10, 37, 64,0.2); }
+.class-icon { font-size: 2.8rem; margin-bottom: 1.2rem; }
+.class-card h3 { font-family: 'Anton', sans-serif; color: var(--forest); font-size: 1.15rem; margin-bottom: 0.6rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.class-card p { color: var(--forest); opacity: 0.6; font-size: 0.88rem; line-height: 1.7; }
 .class-tag {
   display: inline-block;
-  background: var(--light);
-  color: var(--royal);
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 4px 12px;
-  border-radius: 20px;
+  background: var(--olive);
+  color: var(--forest);
+  font-size: 9px;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 50px;
   margin-top: 1rem;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.15em;
 }
 
 /* SUBJECTS */
 .subjects-table {
   width: 100%;
   border-collapse: collapse;
-  border-radius: 16px;
+  border-radius: 2.5rem;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  box-shadow: 0 12px 40px var(--forest-shadow);
 }
-.subjects-table thead { background: var(--navy); color: white; }
+.subjects-table thead { background: var(--forest); color: var(--cream); }
 .subjects-table thead th {
-  padding: 1rem 1.5rem;
+  padding: 1.2rem 1.5rem;
   text-align: left;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.1em;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
 }
-.subjects-table tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+.subjects-table tbody tr { border-bottom: 1px solid var(--olive); transition: background 0.3s var(--ease-premium); }
 .subjects-table tbody tr:last-child { border-bottom: none; }
-.subjects-table tbody tr:hover { background: var(--light); }
-.subjects-table td { padding: 0.9rem 1.5rem; font-size: 0.92rem; }
-.subjects-table td:first-child { font-weight: 800; color: var(--navy); }
+.subjects-table tbody tr:hover { background: var(--olive); }
+.subjects-table td { padding: 1rem 1.5rem; font-size: 0.92rem; background: var(--cream); }
+.subjects-table td:first-child { font-weight: 700; color: var(--forest); }
 .sub-chip {
   display: inline-block;
-  background: var(--light);
-  color: var(--royal);
-  padding: 3px 10px;
-  border-radius: 20px;
+  background: var(--olive);
+  color: var(--forest);
+  padding: 4px 12px;
+  border-radius: 50px;
   font-size: 0.78rem;
   font-weight: 700;
-  margin: 2px;
+  margin: 3px;
 }
 
 /* TEST SERIES */
 .test-series {
-  background: linear-gradient(135deg, var(--navy), var(--royal));
-  border-radius: 20px;
-  padding: 3rem;
-  color: white;
+  background: var(--forest);
+  border-radius: 3rem;
+  padding: 3.5rem;
+  color: var(--cream);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
+  box-shadow: 0 24px 60px var(--forest-shadow);
 }
-.ts-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.8rem; }
+.ts-title { font-family: 'Anton', sans-serif; font-size: 2rem; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; line-height: 1.15; }
 .ts-list { list-style: none; }
 .ts-list li {
-  padding: 0.6rem 0;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 0.7rem 0;
+  border-bottom: 1px solid rgba(230, 240, 250,0.1);
   display: flex;
   align-items: center;
   gap: 10px;
-  font-size: 0.92rem;
-  color: #b0bdf0;
+  font-size: 0.9rem;
+  color: var(--sage);
 }
-.ts-list li span:first-child { color: var(--gold); font-size: 1rem; }
+.ts-list li span:first-child { color: var(--moss); font-size: 1rem; }
 .ts-cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 .ts-card {
-  background: rgba(255,255,255,0.1);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 14px;
-  padding: 1.2rem;
+  background: rgba(230, 240, 250,0.08);
+  border: 1px solid rgba(230, 240, 250,0.15);
+  border-radius: 2rem;
+  padding: 1.5rem;
   text-align: center;
 }
-.ts-card strong { display: block; font-size: 1.5rem; color: var(--gold); font-family: 'Playfair Display', serif; }
-.ts-card span { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
+.ts-card strong { display: block; font-size: 1.6rem; color: var(--sage); font-family: 'Anton', sans-serif; text-transform: uppercase; }
+.ts-card span { font-size: 10px; color: var(--moss); font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; }
 
 /* RBSE INFO */
 .rbse-card {
-  background: var(--light);
-  border-radius: 18px;
-  padding: 2.5rem;
+  background: var(--cream);
+  border-radius: 2.5rem;
+  padding: 3rem;
   display: flex;
   align-items: flex-start;
   gap: 2rem;
+  box-shadow: 0 12px 40px var(--forest-shadow);
 }
 .rbse-icon { font-size: 4rem; flex-shrink: 0; }
-.rbse-card h3 { font-family: 'Playfair Display', serif; color: var(--navy); font-size: 1.4rem; margin-bottom: 0.7rem; }
-.rbse-card p { color: var(--gray); font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem; }
+.rbse-card h3 { font-family: 'Anton', sans-serif; color: var(--forest); font-size: 1.5rem; margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.rbse-card p { color: var(--forest); opacity: 0.65; font-size: 0.92rem; line-height: 1.7; margin-bottom: 1rem; }
 
 @media (max-width: 768px) {
   .test-series { grid-template-columns: 1fr; }
@@ -142,49 +142,25 @@
 
 <!-- CLASSES -->
 <div class="section">
-  <div class="section-label">Classes Offered</div>
-  <div class="section-title">From Play Group to Class 10</div>
-  <div class="section-subtitle">We offer a complete educational journey under one roof, with dedicated teachers at every level.</div>
+  <div class="section-label reveal">Classes Offered</div>
+  <div class="section-title reveal">From Play Group to Class 10</div>
+  <div class="section-subtitle reveal">We offer a complete educational journey under one roof, with dedicated teachers at every level.</div>
   <div class="classes-grid">
-    <div class="class-card">
-      <div class="class-icon">🧸</div>
-      <h3>Play Group & Nursery</h3>
-      <p>Playful introduction to learning through activities, stories, and games that build curiosity and confidence.</p>
-      <div class="class-tag">Ages 2.5–4</div>
-    </div>
-    <div class="class-card">
-      <div class="class-icon">🎨</div>
-      <h3>Kindergarten (KG)</h3>
-      <p>Foundation skills in literacy, numeracy, and creativity through a balanced play-and-learn curriculum.</p>
-      <div class="class-tag">Ages 4–6</div>
-    </div>
-    <div class="class-card">
-      <div class="class-icon">📖</div>
-      <h3>Class 1 to 5</h3>
-      <p>Primary education with strong focus on Hindi, English, Mathematics, and Environmental Studies.</p>
-      <div class="class-tag">Primary Level</div>
-    </div>
-    <div class="class-card">
-      <div class="class-icon">🔬</div>
-      <h3>Class 6 to 8</h3>
-      <p>Middle school academics introducing Science, Social Studies, and deeper language development.</p>
-      <div class="class-tag">Middle Level</div>
-    </div>
-    <div class="class-card">
-      <div class="class-icon">📐</div>
-      <h3>Class 9 & 10</h3>
-      <p>RBSE-board secondary classes with expert teachers, weekly tests, and focused board exam preparation.</p>
-      <div class="class-tag">RBSE Board</div>
-    </div>
+    <div class="class-card reveal"><div class="class-icon">🧒</div><h3>Play Group & Nursery</h3><p>Playful introduction to learning through activities, stories, and games that build curiosity and confidence.</p><div class="class-tag">Ages 2.5–4</div></div>
+    <div class="class-card reveal"><div class="class-icon">🎨</div><h3>Kindergarten (KG)</h3><p>Foundation skills in literacy, numeracy, and creativity through a balanced play-and-learn curriculum.</p><div class="class-tag">Ages 4–6</div></div>
+    <div class="class-card reveal"><div class="class-icon">📖</div><h3>Class 1 to 5</h3><p>Primary education with strong focus on Hindi, English, Mathematics, and Environmental Studies.</p><div class="class-tag">Primary Level</div></div>
+    <div class="class-card reveal"><div class="class-icon">🔬</div><h3>Class 6 to 8</h3><p>Middle school academics introducing Science, Social Studies, and deeper language development.</p><div class="class-tag">Middle Level</div></div>
+    <div class="class-card reveal"><div class="class-icon">📐</div><h3>Class 9 & 10</h3><p>RBSE-board secondary classes with expert teachers, weekly tests, and focused board exam preparation.</p><div class="class-tag">RBSE Board</div></div>
   </div>
 </div>
 
 <!-- SUBJECTS -->
-<div class="bg-light">
+<div class="bg-olive">
   <div class="section">
-    <div class="section-label">Curriculum</div>
-    <div class="section-title">Subjects We Teach</div>
-    <div class="section-subtitle">A well-rounded curriculum aligned with RBSE standards.</div>
+    <div class="section-label reveal">Curriculum</div>
+    <div class="section-title reveal">Subjects We Teach</div>
+    <div class="section-subtitle reveal">A well-rounded curriculum aligned with RBSE standards.</div>
+    <div class="reveal">
     <table class="subjects-table">
       <thead>
         <tr><th>Level</th><th>Subjects</th></tr>
@@ -235,18 +211,19 @@
         </tr>
       </tbody>
     </table>
+    </div>
   </div>
 </div>
 
 <!-- TEST SERIES -->
 <div class="section">
-  <div class="section-label">Exam Preparation</div>
-  <div class="section-title">Weekly Test Series</div>
-  <div style="margin-top:2rem;">
+  <div class="section-label reveal">Exam Preparation</div>
+  <div class="section-title reveal">Weekly Test Series</div>
+  <div style="margin-top:2rem;" class="reveal">
     <div class="test-series">
       <div>
         <div class="ts-title">Structured Weekly Tests</div>
-        <p style="color:#b0bdf0;font-size:0.92rem;line-height:1.7;margin-bottom:1.5rem;">Our weekly test series is the secret behind our 100% board results. Regular practice builds confidence and identifies weak areas before it's too late.</p>
+        <p style="color:var(--sage);font-size:0.9rem;line-height:1.7;margin-bottom:1.5rem;">Our weekly test series is the secret behind our 100% board results. Regular practice builds confidence and identifies weak areas before it's too late.</p>
         <ul class="ts-list">
           <li><span>📅</span> Tests conducted every week for all classes</li>
           <li><span>📊</span> Detailed performance reports shared with parents</li>
@@ -267,17 +244,17 @@
 </div>
 
 <!-- RBSE INFO -->
-<div class="bg-light">
+<div class="bg-olive">
   <div class="section">
-    <div class="section-label">Board Affiliation</div>
-    <div class="section-title">RBSE Affiliated School</div>
-    <div class="rbse-card">
+    <div class="section-label reveal">Board Affiliation</div>
+    <div class="section-title reveal">RBSE Affiliated School</div>
+    <div class="rbse-card reveal">
       <div class="rbse-icon">🎓</div>
       <div>
         <h3>Rajasthan Board of Secondary Education (RBSE)</h3>
         <p>Saint "D" Public School is proud to be affiliated with the Rajasthan Board of Secondary Education. Our Class 10 students appear for the official RBSE board examinations, receiving state-recognized certificates that open doors for further education across Rajasthan and India.</p>
         <p>In RBSE Board Exams 2026, our students achieved <strong>100% Pass with 100% First Division</strong> — a testament to the quality of education at our school.</p>
-        <a href="./results" class="btn btn-navy">View 2026 Results →</a>
+        <a href="results.html" class="btn btn-forest">View 2026 Results →</a>
       </div>
     </div>
   </div>
