@@ -5,13 +5,13 @@ const BUILDING_IMG = 'assets/building.jpg';
 
 function getNavHTML(activePage) {
   const pages = [
-    { href: './',      label: 'Home'      },
-    { href: './about',      label: 'About'     },
-    { href: './academics',  label: 'Academics' },
-    { href: './results',    label: 'Results'   },
-    { href: './hostel',     label: 'Hostel'    },
-    { href: './gallery',    label: 'Gallery'   },
-    { href: './contact',    label: 'Contact'   },
+    { href: 'index.html',      label: 'Home'      },
+    { href: 'about.html',      label: 'About'     },
+    { href: 'academics.html',  label: 'Academics' },
+    { href: 'results.html',    label: 'Results'   },
+    { href: 'hostel.html',     label: 'Hostel'    },
+    { href: 'gallery.html',    label: 'Gallery'   },
+    { href: 'contact.html',    label: 'Contact'   },
   ];
   const links = pages.map(p =>
     `<li><a href="${p.href}" class="${p.href===activePage?'active':''}">${p.label}</a></li>`
@@ -22,7 +22,7 @@ function getNavHTML(activePage) {
 
   return `
 <nav id="mainNav">
-  <a class="nav-logo" href="./">
+  <a class="nav-logo" href="index.html">
     <img src="${LOGO_IMG}" alt="Logo" onerror="this.style.display='none'">
     <div class="nav-logo-text">
       <strong>Saint &quot;D&quot; Public School</strong>
@@ -31,7 +31,7 @@ function getNavHTML(activePage) {
   </a>
   <ul class="nav-pill">
     ${links}
-    <li><a href="./contact" class="nav-cta">Admissions</a></li>
+    <li><a href="contact.html" class="nav-cta">Admissions</a></li>
   </ul>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -39,7 +39,7 @@ function getNavHTML(activePage) {
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   ${mobileLinks}
-  <a href="./contact" style="color:var(--cream);font-weight:700;">Apply for Admission</a>
+  <a href="contact.html" style="color:var(--cream);font-weight:700;">Apply for Admission</a>
 </div>`;
 }
 
@@ -55,23 +55,23 @@ function getFooterHTML() {
     <div class="footer-col">
       <h4>Quick Links</h4>
       <ul>
-        <li><a href="./">Home</a></li>
-        <li><a href="./about">About Us</a></li>
-        <li><a href="./academics>Academics</a></li>
-        <li><a href="./results">Results 2026</a></li>
-        <li><a href="./hostel">Hostel</a></li>
-        <li><a href="./gallery">Gallery</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="academics.html">Academics</a></li>
+        <li><a href="results.html">Results 2026</a></li>
+        <li><a href="hostel.html">Hostel</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Academics</h4>
       <ul>
-        <li><a href="./academics">Play Group – KG</a></li>
-        <li><a href="./academics">Class 1 – 5</a></li>
-        <li><a href="./academics">Class 6 – 8</a></li>
-        <li><a href="./academics">Class 9 – 10</a></li>
-        <li><a href="./academics">Weekly Test Series</a></li>
-        <li><a href="./contact">Admissions</a></li>
+        <li><a href="academics.html">Play Group – KG</a></li>
+        <li><a href="academics.html">Class 1 – 5</a></li>
+        <li><a href="academics.html">Class 6 – 8</a></li>
+        <li><a href="academics.html">Class 9 – 10</a></li>
+        <li><a href="academics.html">Weekly Test Series</a></li>
+        <li><a href="contact.html">Admissions</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -127,7 +127,7 @@ function initNavScroll() {
 
 // Inject on load
 document.addEventListener('DOMContentLoaded', () => {
-  const page = window.location.pathname.split('/').pop() || './';
+  const page = window.location.pathname.split('/').pop() || 'index.html';
   document.getElementById('navbar').innerHTML = getNavHTML(page);
   document.getElementById('footer').innerHTML = getFooterHTML();
   initScrollReveal();
